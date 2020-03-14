@@ -1,16 +1,4 @@
-# TSIPI2020
-Projeto Integrador 2020 
+# CursoLaravel
+Curso Laravel 30Hrs
 
-## Authors
-* **Sérgio Felzener** - github.com/[SergioFelzener](https://github.com/SergioFelzener)
-*  **Vinicius Savegnago** - github.com/[Savegdesigner](https://github.com/Savegdesigner)
-
-### Development
-Versioning & Branches
-```
-/Master Branch (DO NOT USE)
-  /feature/$feature_name$ (Droping Features Branch)
-  /fix/$fix_name$ (Fixing Branch)
-  /test/$test_name$ (Testing Branch)
-
-```
+Section 10 current branch ... date-03-12-2020; 14:10
