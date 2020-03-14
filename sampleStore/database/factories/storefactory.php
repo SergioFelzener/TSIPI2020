@@ -1,0 +1,16 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\store;
+use Faker\Generator as Faker;
+
+$factory->define(store::class, function (Faker $faker) {
+    return [
+        'name'=> $faker->name,
+        'description' =>$faker->sentence,
+        'phone'=>$faker->phoneNumber,
+        'slug' =>$faker->slug,
+
+    ];
+});
