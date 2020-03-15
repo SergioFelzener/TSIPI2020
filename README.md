@@ -1,4 +1,4 @@
-# CursoLaravel
-Curso Laravel 30Hrs
+# PI 3 Semestre SampleStore
 
-Section 10 current branch ... date-03-12-2020; 14:10
+Atualizando 14/03/2020;
+
