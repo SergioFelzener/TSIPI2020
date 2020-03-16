@@ -8,6 +8,7 @@ use App\Http\Requests\storerequest;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Facades\Storage;
 
+
 class storecontroller extends Controller
 {
     use UploadTrait;

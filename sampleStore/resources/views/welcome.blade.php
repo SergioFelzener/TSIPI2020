@@ -20,9 +20,14 @@
                     <h3>
                         R$ : {{ number_format($produto->price, '2', ',', '.')}}
                     </h3>
+                    <span>
+                        Loja : {{ $produto->store->name }}
+                    </span>
+                    <div class="mt-5">
                     <a href="{{route('produto.single', ['slug' => $produto->slug])}}" class="btn btn-success">
                     Ver Produto
                     </a>
+                    </div>
                 </div>
             </div>
         </div>
