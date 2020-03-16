@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     private $produto;
 
-    public function __construct(produto $produto){
+    public function __construct(Produto $produto){
         $this->produto = $produto;
         //dd($produto);
     }
@@ -18,10 +18,11 @@ class HomeController extends Controller
 
     public function index()
     {
-    	$produtos = $this->produto->limit(10)->orderBy('id', 'DESC')->get();
+        $produtos = $this->produto->limit(10)->orderBy('id', 'DESC')->get();
+        //dd($produtos);
 
 
-	    return view('welcome', compact('produtos', 'stores'));
+	    return view('welcome', compact('produtos'));
     }
 
     public function single($slug){

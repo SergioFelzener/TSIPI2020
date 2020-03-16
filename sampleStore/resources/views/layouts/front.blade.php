@@ -6,6 +6,7 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Marketplace Sample Store</title>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
@@ -45,7 +46,7 @@
 
                     <div class="my-2 my-lg-0">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
+                          <!--  <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="event.preventDefault();
                                                                       document.querySelector('form.logout').submit(); ">Sair</a>
 
@@ -55,6 +56,18 @@
                             </li>
                             <li class="nav-item">
                                 <span class="nav-link">{{auth()->user()->name}}</span>
+                            </li> -->
+                            <li class="nav-item">
+                            <a href="{{route('cart.index')}}" class="nav-link">
+                                <!-- Se existir produtos no carrino -->
+                                @if(session()->has('cart'))
+                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais -->
+                                    <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
+                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais  -->
+                                    <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
+                                @endif
+                                <i class="fa fa-cart-arrow-down fa-2x"></i>
+                            </a>
                             </li>
                         </ul>
                     </div>
