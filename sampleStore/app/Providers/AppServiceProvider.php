@@ -23,10 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require_once "../vendor/autoload.php";
-
-            \PagSeguro\Library::initialize();
-            \PagSeguro\Library::cmsVersion()->setName("SampleStore")->setRelease("1.0.0");
-            \PagSeguro\Library::moduleVersion()->setName("SampleStore")->setRelease("1.0.0");
+        \PagSeguro\Library::initialize();
+        \PagSeguro\Library::cmsVersion()->setName("sampleStore")->setRelease("1.0.0");
+        \PagSeguro\Library::moduleVersion()->setName("sampleStore")->setRelease("1.0.0");
     }
 }
