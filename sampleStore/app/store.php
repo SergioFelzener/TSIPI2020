@@ -16,19 +16,19 @@ class store extends Model{
      /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions() : SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug');
+    public function getSlugOptions() : SlugOptions {
+        return SlugOptions::create()->generateSlugsFrom('name')->saveSlugsTo('slug');
     }
-
 
     public function user(){
         $this->belongsTo(User::class);
     }
     public function produtos(){
         return $this->hasMany(produto::class);
+    }
+
+    public function orders(){
+        return $this->hasMany(UserOrder::class);
     }
 
 }
