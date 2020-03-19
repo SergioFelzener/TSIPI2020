@@ -30,7 +30,6 @@ class CheckoutController extends Controller
 
        // session()->forget('pagseguro_session_code');
 
-
        return view ('checkout', compact('cartItens'));
     }
 
