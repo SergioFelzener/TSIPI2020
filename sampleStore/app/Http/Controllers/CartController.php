@@ -21,7 +21,7 @@ class CartController extends Controller
         if(!$produto->count() || $produtoData['amount'] == 0)
             return redirect()->route('home');
 
-        $produto = array_merge($produtoData, $produto->first(['name', 'price'])->toArray());
+        $produto = array_merge($produtoData, $produto->first(['name', 'price', 'store_id'])->toArray());
 
 
         //dd($produto);

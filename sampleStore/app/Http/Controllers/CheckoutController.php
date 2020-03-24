@@ -53,6 +53,9 @@ class CheckoutController extends Controller
 
             $cartItens = session()->get('cart');
 
+            $stores = array_unique(array_column($cartItens, 'store_id'));
+
+
             foreach($cartItens as $item){
                 // Add an item for this payment request
                 $creditCard->addItems()->withParameters(
@@ -151,7 +154,9 @@ class CheckoutController extends Controller
                 'store_id'=> 42
             ];
 
-            $user->orders()->create($userOrder);
+            $userOrder = $user->orders()->create($userOrder);
+            $userOrder->stores()->sync($stores);
+
 
             session()->forget('cart');
             session()->forget('pagseguro_session_code');
