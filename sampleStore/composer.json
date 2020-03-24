@@ -40,9 +40,13 @@
         "classmap": [
             "database"
         ],
+
+        "files": ["helpers/functions.php"],
+
         "psr-4": {
             "App\\": "app/"
         }
+
     },
     "autoload-dev": {
         "psr-4": {
