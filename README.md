@@ -2,7 +2,8 @@
 
 Atualizando 18/03/2020; **0:25am** 
 Atualizando 19/03/2020; **6:10pm** 
-Atualizando 23/03/2020; **15:49pm** 
+Atualizando 23/03/2020; **3:49pm**
+Atualizando 23/03/2020; **7:03pm** 
 
 ultima atualização implementação do pagseguro pdk
 **implementacao da bandeira do cartão de credito**
@@ -16,6 +17,10 @@ finalizando vizualizacao da single page store
 fazendo validacoes no metodo cart cart controller add
 nao permitindo que usuarios mal intencionados alterem dados 
 dos formularios em hidden.
+
+**iniciando meus pedidos**
+
+
 
 
 
