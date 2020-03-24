@@ -12,7 +12,17 @@ class CartController extends Controller
         return view('cart', compact('cart'));
     }
     public function add(Request $request) {
-        $produto = $request->get('produto');
+        $produtoData = $request->get('produto');
+
+        $produto = \App\produto::whereSlug($produtoData['slug']);
+
+        //dd($produto->count());
+        // nao deixar o usuario alterar nossos formularios que estao em hidden
+        if(!$produto->count() || $produtoData['amount'] == 0)
+            return redirect()->route('home');
+
+        $produto = array_merge($produtoData, $produto->first(['name', 'price'])->toArray());
+
 
         //dd($produto);
         // verificando se existe sessao para os produtos

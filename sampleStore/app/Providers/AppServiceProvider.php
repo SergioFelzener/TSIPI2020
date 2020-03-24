@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
         \PagSeguro\Library::initialize();
         \PagSeguro\Library::cmsVersion()->setName("sampleStore")->setRelease("1.0.0");
         \PagSeguro\Library::moduleVersion()->setName("sampleStore")->setRelease("1.0.0");
+
     }
 }

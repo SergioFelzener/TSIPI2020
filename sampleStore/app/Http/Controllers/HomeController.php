@@ -18,11 +18,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        $produtos = $this->produto->limit(10)->orderBy('id', 'DESC')->get();
+        $produtos = $this->produto->limit(12)->orderBy('id', 'DESC')->get();
         //dd($produtos);
+        $stores = \App\store::limit(3)->orderBy('id', 'DESC')->get();
 
-
-	    return view('welcome', compact('produtos'));
+	    return view('welcome', compact('produtos', 'stores'));
     }
 
     public function single($slug){
