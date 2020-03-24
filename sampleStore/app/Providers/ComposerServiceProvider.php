@@ -35,6 +35,6 @@ class ComposerServiceProvider extends ServiceProvider
         //
         //});
         // organizando o escrito acima em classe criada abaixo
-        view()->composer('*', 'App\Http\Views\CategoriaViewComposer@compose');
+        view()->composer('layouts.front', 'App\Http\Views\CategoriaViewComposer@compose');
     }
 }

@@ -15,4 +15,9 @@ class UserOrder extends Model
     public function store(){
         return $this->belongsTo(store::class);
     }
+
+    public function stores(){
+                                                // passando tabledas de referencias com seus devidos nomes no db
+        return $this->belongsToMany(store::class, 'order_store', 'order_id');
+    }
 }
