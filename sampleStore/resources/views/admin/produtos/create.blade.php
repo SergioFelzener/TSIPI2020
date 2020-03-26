@@ -70,6 +70,16 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <label for="">Audio do Produto</label>
+            <input type="file" name="audio" class="form-control @error('audio.*') is-invalid @enderror">
+            @error('audio')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
         <div>
             <button type="submit" class="btn btn-lg btn-success">Criar Produto</button>
         </div>

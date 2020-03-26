@@ -35,4 +35,8 @@ class produto extends Model{
         return $this->hasMany(produtofoto::class);
     }
 
+    public function audio(){
+        return $this->hasOne(produtoaudio::class);
+    }
+
 }
