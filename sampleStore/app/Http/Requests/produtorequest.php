@@ -29,7 +29,8 @@ class produtorequest extends FormRequest
             'body' => 'required',
             'price'=> 'required',
             // validando todos campos do array certificando que e foto
-            'fotos.*'=> 'image'
+            'fotos.*'=> 'image',
+            'audio.*'=> 'audio'
         ];
     }
 
@@ -40,7 +41,8 @@ class produtorequest extends FormRequest
             'required' => 'campo obrigatório',
             'min' => 'minimo de :min caracteres',
             'max' => 'maximo de :max caracteres',
-            'image'=> 'Arquivo não é uma imagem valida!'
+            'image'=> 'Arquivo não é uma imagem valida!',
+            'audio'=> 'Audio nao suportado'
 
         ];
     }

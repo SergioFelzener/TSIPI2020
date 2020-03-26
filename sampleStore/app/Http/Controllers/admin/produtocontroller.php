@@ -67,6 +67,12 @@ class produtocontroller extends Controller
             $produto->fotos()->createMany($images);
         }
 
+        if($request->hasFile('audio')) {
+            $audio = $this->audioUpload($request, 'audio');
+
+            $produto->audio()->createMany($audio);
+        }
+
         flash('produto criado com sucesso')->success();
         return redirect()->route('admin.produtos.index');
 
@@ -140,6 +146,16 @@ class produtocontroller extends Controller
 
         flash('produto removido com sucesso')->success();
         return redirect()->route('admin.produtos.index');
+    }
+
+    private function audioUpload(Request $request, $audioColumn){
+
+        $audio = $request->file('audio');
+        $uploadAudio =[];
+
+        $uploadAudio [] = [$audioColumn => $audio->store('audio', 'public')];
+
+        return $uploadAudio;
     }
 
 }
