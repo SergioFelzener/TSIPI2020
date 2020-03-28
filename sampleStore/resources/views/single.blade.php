@@ -63,6 +63,14 @@
         {{ $produto->body }}
     </div>
 </div>
+<div class="row">
+    <div class="col-md-4">
+        <audio controls>
+            <source src="{{ asset('storage/' . $produto->audio->get('audio'))}}" type="audio/mpeg">
+        </audio>
+        <p>AQUI O AUDIO</p>
+    </div>
+</div>
 
 
 @endsection
