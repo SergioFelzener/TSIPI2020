@@ -25,6 +25,14 @@
         <div class="col-6">
             <div class="col-md-12">
                 <h2>{{$produto->name}}</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <audio controls>
+                            <source src="{{ asset('storage/' . $produto->audio->audio)}}" type="audio/mpeg">
+                        </audio>
+                        <p>AQUI O AUDIO</p>
+                    </div>
+                </div>
                 <p>
                     {{ $produto->description }}
                 </p>
@@ -63,14 +71,7 @@
         {{ $produto->body }}
     </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <audio controls>
-            <source src="{{ asset('storage/' . $produto->audio->get('audio'))}}" type="audio/mpeg">
-        </audio>
-        <p>AQUI O AUDIO</p>
-    </div>
-</div>
+
 
 
 @endsection
