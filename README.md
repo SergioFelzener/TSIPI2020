@@ -5,6 +5,8 @@ Atualizando 19/03/2020; **6:10pm**
 Atualizando 23/03/2020; **3:49pm**
 Atualizando 23/03/2020; **7:03pm**
 Atualizando 25/03/2020; **11:48pm** 
+Atualizando 27/03/2020; **5:08pm** 
+Atualizando 28/03/2020; **01:44am** 
 
 ultima atualização implementação do pagseguro pdk
 **implementacao da bandeira do cartão de credito**
@@ -22,6 +24,8 @@ dos formularios em hidden.
 **iniciando meus pedidos**
 
 **Fazendo Upload de audio file para storage e criando referencia e armazenando a referencia no DB **
+
+** Audio Funcionando ***
 
 
 
