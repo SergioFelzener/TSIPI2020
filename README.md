@@ -1,5 +1,7 @@
 # PI 3 Semestre SampleStore
 
+## Sérgio
+
 Atualizando 18/03/2020; **0:25am** 
 Atualizando 19/03/2020; **6:10pm** 
 Atualizando 23/03/2020; **3:49pm**
@@ -29,6 +31,8 @@ dos formularios em hidden.
 ** Audio Funcionando ***
 
 ** Fixed Bugs in CheckOutController and Migrations ***
+
+## Vini
 
 
 
