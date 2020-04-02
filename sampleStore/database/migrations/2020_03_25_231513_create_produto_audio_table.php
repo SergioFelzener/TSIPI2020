@@ -13,7 +13,7 @@ class CreateProdutoAudioTable extends Migration
      */
     public function up()
     {
-        Schema::create('produto_audio', function (Blueprint $table) {
+        Schema::create('produtoaudios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produto_id');
             $table->string('audio');
@@ -29,6 +29,6 @@ class CreateProdutoAudioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produto_audio');
+        Schema::dropIfExists('produtoaudios');
     }
 }

@@ -13,7 +13,7 @@ class CreateProdutoFotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('produto_fotos', function (Blueprint $table) {
+        Schema::create('produtofotos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produto_id');
             $table->string('image');
@@ -29,6 +29,6 @@ class CreateProdutoFotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produto_fotos');
+        Schema::dropIfExists('produtofotos');
     }
 }
