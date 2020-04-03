@@ -1,6 +1,6 @@
 # PI 3 Semestre SampleStore
 
-##Branches
+## Branches
 
 - front_back (master)
 - front_(ajustes)
