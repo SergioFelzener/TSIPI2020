@@ -1,5 +1,11 @@
 # PI 3 Semestre SampleStore
 
+##Branches
+
+- front_back (master)
+- front_(ajustes)
+- back_(ajustes)
+
 ## Sérgio
 
 Atualizando 18/03/2020; **0:25am** 
