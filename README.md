@@ -3,7 +3,7 @@
 ## Branches
 
 - front_back (master)
-- front_(ajustes)
+- front_(ajustes) -> Exemplo: front_menu
 - back_(ajustes)
 
 ## Sérgio
