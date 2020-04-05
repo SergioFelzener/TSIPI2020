@@ -16,6 +16,8 @@ Atualizando 25/03/2020; **11:48pm**
 Atualizando 27/03/2020; **5:08pm** 
 Atualizando 28/03/2020; **01:44am** 
 Atualizando 02/04/2020; **08:13am**
+Atualizando 05/04/2020; **12:10pm**
+Atualizando 05/04/2020; **03:21pm**
 
 ultima atualização implementação do pagseguro pdk
 **implementacao da bandeira do cartão de credito**
@@ -37,6 +39,10 @@ dos formularios em hidden.
 ** Audio Funcionando ***
 
 ** Fixed Bugs in CheckOutController and Migrations ***
+
+** Finalizando tela de pedidos ***
+
+** Gerenciando Assets para front-end **
 
 ## Vini
 
