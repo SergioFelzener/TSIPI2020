@@ -41,6 +41,9 @@ Route::prefix('checkout')->name('checkout.')->group(function(){
 
 
 Route::group(['middleware' => ['auth']], function(){
+
+    Route::get('my-orders', 'UserOrderController@index')->name('user.orders');
+
     Route::prefix('admin')->name('admin.')->namespace('admin')->group(function(){
         Route::resource('stores', 'storecontroller');
         Route::resource('produtos', 'produtocontroller');
