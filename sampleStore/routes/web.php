@@ -212,3 +212,27 @@ Route::get('/model', function(){
 
   //});
 
+Route::get('not', function (){
+
+    $user = \App\User::find(1);
+    //$user->notify(new \App\Notifications\StoreReceiveNewOrder());
+
+    //$notification = $user->notifications->first();
+
+    // $notification->markAsread();
+    $stores = [1, 2, 3];
+    $stores = \App\Store::whereIn('id', $stores)->get();
+
+    //return $stores->map(function($store){
+   //    return $store->user;
+   // });
+   // dd($stores);
+   return $stores->each(function($store){
+     // return $store->user;
+
+  });
+
+
+    // return $user->readNotifications->count();
+
+});
