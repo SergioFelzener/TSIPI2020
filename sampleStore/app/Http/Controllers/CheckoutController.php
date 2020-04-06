@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\store;
+
 
 class CheckoutController extends Controller
 {
@@ -28,7 +30,7 @@ class CheckoutController extends Controller
 
        var_dump(session()->get('pagseguro_session_code'));
 
-       // session()->forget('pagseguro_session_code');
+       //session()->forget('pagseguro_session_code');
 
        return view ('checkout', compact('cartItens'));
     }
@@ -156,6 +158,10 @@ class CheckoutController extends Controller
 
             $userOrder = $user->orders()->create($userOrder);
             $userOrder->stores()->sync($stores);
+
+            // notificar loja de novo pedido
+
+            $store = (new Store())->notifyStoreOwners($stores);
 
 
             session()->forget('cart');
