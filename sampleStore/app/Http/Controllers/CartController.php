@@ -18,7 +18,7 @@ class CartController extends Controller
 
         //dd($produto->count());
         // nao deixar o usuario alterar nossos formularios que estao em hidden
-        if(!$produto->count() || $produtoData['amount'] == 0)
+        if(!$produto->count() || $produtoData['amount'] <= 0)
             return redirect()->route('home');
 
         $produto = array_merge($produtoData, $produto->first(['name', 'price', 'store_id'])->toArray());
