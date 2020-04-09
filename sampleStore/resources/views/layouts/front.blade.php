@@ -68,7 +68,7 @@
                                 <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                             @endif
 
-                            <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                            <img src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
 
                         </a>
                         </li>
@@ -81,7 +81,9 @@
 
             </nav>
 
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
+            <!-- NAV ORIGINAL
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
 
             <a class="navbar-brand" href="{{route('home')}}">Marketplace Sample Store</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +125,7 @@
                                     </li>
                                 @endauth
                             <a href="{{route('cart.index')}}" class="nav-link">
-                                 <!-- Se existir produtos no carrino
+                                <!-- Se existir produtos no carrino
                                 @if(session()->has('cart'))
                                 <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais
                                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
@@ -136,7 +138,7 @@
                         </ul>
                     </div>
             </div>
-        </nav> -->
+        </nav>
 
          <!-- NAV -->
 

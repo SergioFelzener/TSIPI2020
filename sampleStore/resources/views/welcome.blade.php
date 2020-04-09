@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="row front">
+<div style="color: black;" class="row front">
 
     @foreach($produtos as $key => $produto)
         <div class="col-md-4">

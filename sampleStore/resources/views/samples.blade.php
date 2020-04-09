@@ -2,6 +2,8 @@
 
 @section('content')
 
+<h2>Samples</h2>
+
 <div class="row front">
 
     @foreach($produtos as $key => $produto)
