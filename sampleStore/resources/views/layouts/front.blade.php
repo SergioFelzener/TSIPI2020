@@ -27,14 +27,14 @@
 
                 <nav>
                 <div class="logo">
-                    <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+                    <a href="/"><img id="logo" style="width: 250px; height: 100px;" src="../assets/img/samplelogo.png" alt="Logo Simpler"></a>
                 </div>
 
                 <ul id="navigation-links">
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="">Samples</a></li>
+                    <li><a href="{{route('samples')}}">Samples</a></li>
                     <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
-                    <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>       
+                    <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
                 </ul>
 
                 @auth
@@ -51,8 +51,28 @@
                 </ul>
                 @endauth
 
-                <div id="cart-icon">
-                    <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                <div id="cart-icon" class="my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            @auth
+                                <li class="nav-item @if(request()->is('my-orders')) active @endif">
+                                    <a href="{{ route('user.orders') }}" class="nav-link">Meus Pedidos</a>
+                                </li>
+                            @endauth
+                        <a href="{{route('cart.index')}}" class="nav-link">
+                             <!-- Se existir produtos no carrino -->
+                            @if(session()->has('cart'))
+                            <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais -->
+                                <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
+                            <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais -->
+                                <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
+                            @endif
+
+                            <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+
+                        </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="menu-icon">
@@ -103,11 +123,11 @@
                                     </li>
                                 @endauth
                             <a href="{{route('cart.index')}}" class="nav-link">
-                                 <!-- Se existir produtos no carrino 
+                                 <!-- Se existir produtos no carrino
                                 @if(session()->has('cart'))
-                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais 
+                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais
                                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais 
+                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais
                                     <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                                 @endif
                                 <i class="fa fa-cart-arrow-down fa-2x"></i>

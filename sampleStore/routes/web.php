@@ -17,8 +17,9 @@ use App\Http\Controllers\admin\ProductPhotoController;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/produto/{slug}', 'HomeController@single')->name('produto.single');
-
+Route::get('/samples', 'samplesController@index')->name('samples');
 Route::get('/categoria/{slug}', 'CategoriaController@index')->name('categoria.single');
+
 Route::get('/store/{slug}', 'StoreController@index')->name('store.single');
 
 Route::prefix('cart')->name('cart.')->group(function(){
