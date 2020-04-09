@@ -20,6 +20,7 @@ Atualizando 05/04/2020; **12:10pm**
 Atualizando 05/04/2020; **03:21pm**
 Atualizando 05/04/2020; **09:13pm**
 Atualizando 06/04/2020; **07:30pm**
+Atualizando 09/04/2020; **01:30pm**
 
 ultima atualização implementação do pagseguro pdk
 **implementacao da bandeira do cartão de credito**
@@ -49,6 +50,10 @@ dos formularios em hidden.
 ** enviando email para Registered User oK **
 
 ** Finalizando notificacoes para loja **
+
+** Pag só samples **
+inserindo todas categorias na home fora do menu 
+
 
 ## Vini
 
