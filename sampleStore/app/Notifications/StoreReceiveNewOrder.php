@@ -41,8 +41,9 @@ class StoreReceiveNewOrder extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->subject('novo pedido')
+                    ->line('Você recebeu um novo pedido na loja')
+                    ->action('ver pedidos', route('admin.orders.my'))
                     ->line('Thank you for using our application!');
     }
 
