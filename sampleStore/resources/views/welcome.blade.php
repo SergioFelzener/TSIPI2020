@@ -34,6 +34,7 @@
         @if(($key + 1) % 3 == 0)</div><div class="row front">@endif
 
     @endforeach
+
 </div>
 <div class="row">
     <div class="col-12">

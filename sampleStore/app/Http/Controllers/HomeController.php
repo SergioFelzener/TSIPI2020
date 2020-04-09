@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\produto;
+use App\categoria;
 use App\Http\Controllers\admin\produtocontroller;
 
 class HomeController extends Controller
@@ -15,18 +16,21 @@ class HomeController extends Controller
         //dd($produto);
     }
 
-
     public function index()
     {
         $produtos = $this->produto->limit(12)->orderBy('id', 'DESC')->get();
         //dd($produtos);
+
         $stores = \App\store::limit(3)->orderBy('id', 'DESC')->get();
 
-	    return view('welcome', compact('produtos', 'stores'));
+        return view('welcome', compact('produtos', 'stores'));
+        
     }
 
     public function single($slug){
         $produto = $this->produto->whereSlug($slug)->first();
+
+        // dd($produto);
 
         return view ('single', compact('produto'));
 

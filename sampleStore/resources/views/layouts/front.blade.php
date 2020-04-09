@@ -10,15 +10,58 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+        <script defer src="{{asset('js/app.js')}}"></script>
+
         <style>
             .front.row {
                 margin-bottom: 40px;
             }
+
         </style>
         @yield('stylesheets')
     </head>
         <body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
+
+        <!-- NAV -->
+
+                <nav>
+                <div class="logo">
+                    <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+                </div>
+
+                <ul id="navigation-links">
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="">Samples</a></li>
+                    <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
+                    <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>       
+                </ul>
+
+                @auth
+                <ul class="">
+                    <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
+                        <a class="nav-link" href="{{route('admin.stores.index')}}">Lojas <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
+                        <a class="nav-link" href="{{route('admin.produtos.index')}}">Produtos</a>
+                    </li>
+                    <li class="nav-item @if(request()->is('admin/categorias*')) active @endif">
+                        <a class="nav-link" href="{{route('admin.categorias.index')}}">Categorias</a>
+                    </li>
+                </ul>
+                @endauth
+
+                <div id="cart-icon">
+                    <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                </div>
+
+                <div class="menu-icon">
+                    <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
+                </div>
+
+            </nav>
+
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
 
             <a class="navbar-brand" href="{{route('home')}}">Marketplace Sample Store</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,11 +103,11 @@
                                     </li>
                                 @endauth
                             <a href="{{route('cart.index')}}" class="nav-link">
-                                <!-- Se existir produtos no carrino -->
+                                 <!-- Se existir produtos no carrino 
                                 @if(session()->has('cart'))
-                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais -->
+                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais 
                                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais  -->
+                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais 
                                     <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                                 @endif
                                 <i class="fa fa-cart-arrow-down fa-2x"></i>
@@ -73,14 +116,16 @@
                         </ul>
                     </div>
             </div>
-        </nav>
+        </nav> -->
+
+         <!-- NAV -->
 
     <div class="container">
         @include('flash::message')
         @yield('content')
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="{{asset('js/app.js')}}"></script>
+    <!-- <script src="{{asset('js/app.js')}}"></script> -->
     @yield('scripts')
 </body>
 </html>

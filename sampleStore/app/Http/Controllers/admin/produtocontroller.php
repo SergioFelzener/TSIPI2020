@@ -27,7 +27,6 @@ class produtocontroller extends Controller
         $userStore = auth()->user()->store;
         $produtos = $userStore->produtos()->paginate(2);
 
-
         return view ('admin.produtos.index', compact('produtos'));
     }
 
