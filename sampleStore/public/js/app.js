@@ -37054,6 +37054,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./menu */ "./resources/js/menu.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37101,6 +37103,21 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/menu.js":
+/*!******************************!*\
+  !*** ./resources/js/menu.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var menu_icon = document.querySelector('.menu-icon');
+var nav_ul = document.querySelector('ul');
+menu_icon.addEventListener('click', function () {
+  nav_ul.classList.toggle('open');
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -37119,8 +37136,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/sergiofelzener/Documents/GitHub/TSIPI2020/sampleStore/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/sergiofelzener/Documents/GitHub/TSIPI2020/sampleStore/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\vinic\OneDrive\Currículo\Documentos\V1N1\Faculdade\Projetos\Simpler\Repo\TSIPI2020\sampleStore\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\vinic\OneDrive\Currículo\Documentos\V1N1\Faculdade\Projetos\Simpler\Repo\TSIPI2020\sampleStore\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
