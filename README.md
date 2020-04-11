@@ -23,6 +23,7 @@ Atualizando 06/04/2020; **07:30pm**
 Atualizando 09/04/2020; **01:30pm**
 Atualizando 09/04/2020; **06:28pm**
 Atualizando 10/04/2020; **01:11am**
+Atualizando 10/04/2020; **02:00pm**
 
 ultima atualização implementação do pagseguro pdk
 **implementacao da bandeira do cartão de credito**
@@ -59,6 +60,8 @@ inserindo todas categorias na home fora do menu
 ** Controlle de Usuário ADMIN e USER **
 
 ** Melhorias Finais **
+
+** Organizando cod JS do pagseguro** npm rum dev npm rum watch !!
 
 ## Vini
 
