@@ -40,7 +40,7 @@ class CheckoutController extends Controller
         try{
             $dataPost = $request->all();
 
-            $reference = "xpto";
+            $reference = 'aqui cod de referencia : X75';
             //Instantiate a new direct payment request, using Credit Card
             $creditCard = new \PagSeguro\Domains\Requests\DirectPayment\CreditCard();
 
