@@ -62,6 +62,8 @@ class produtocontroller extends Controller
 
         $categorias = $request->get('categorias', null);
 
+        $data['price'] = formatPriceToDatabase($data['price']);
+
         $store = auth()->user()->store;
         $produto = $store ->produtos()->create($data);
 
@@ -120,6 +122,7 @@ class produtocontroller extends Controller
     {
         $data = $request->all();
         $categorias = $request->get('categorias', null);
+        $data['price'] = formatPriceToDatabase($data['price']);
 
         $produto = $this->produto->find($produto);
         $produto->update($data);
