@@ -39,19 +39,29 @@
 
                     @foreach ($categorias as $categoria)
                     <li class="nav-item @if(request()->is('categoria/' . $categoria->slug)) active @endif">
-                    <a class="nav-link" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">{{$categoria->name}}</a>
+                        <a class="nav-link" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">{{$categoria->name}}</a>
                     </li>
                     @endforeach
 
                 </ul>
                     <div class="my-2 my-lg-0">
                         <ul class="navbar-nav mr-auto">
+                            @if(auth())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('register')}}">Registro</a>
+                                </li>
+                            @endif
+                            @auth
                                 <li class="nav-item mr-5">
                                     <a class="nav-link" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
                                     <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
                                        @csrf
                                     </form>
                                 </li>
+                            @endauth
                             <li class="nav-item">
                                 @auth
                                     <li class="nav-item @if(request()->is('my-orders')) active @endif">
