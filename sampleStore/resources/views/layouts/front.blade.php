@@ -46,7 +46,7 @@
                 </ul>
                     <div class="my-2 my-lg-0">
                         <ul class="navbar-nav mr-auto">
-                            @if(auth())
+                            @if(!auth())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('login')}}">Login</a>
                                 </li>
