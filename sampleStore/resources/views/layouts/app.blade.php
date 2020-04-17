@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>SampleStore</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
@@ -32,6 +33,12 @@
             </ul>
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.notifications.index') }}" class="nav-link">
+                                <span class="badge badge-danger">{{auth()->user()->unreadNotifications->count()}}</span>
+                                <i class="fa fa-bell"></i>
+                            </a>
+                        </li>
                         <li class="nav-item mr-5">
                             <a class="nav-link" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
                             <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
@@ -55,8 +62,8 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+    @yield('scripts')
 
 </body>
 </html>

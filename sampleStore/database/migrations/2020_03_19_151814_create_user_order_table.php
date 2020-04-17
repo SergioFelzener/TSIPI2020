@@ -18,7 +18,7 @@ class CreateUserOrderTable extends Migration
             //referencia do usuario para saber qual cliente que e dono do pedidio
             $table->unsignedBigInteger('user_id');
             // Loja exibe os pedidos da loja referencia com as lojas
-            $table->unsignedBigInteger('store_id');
+            //$table->unsignedBigInteger('store_id');
             // referencia do pedido para futuramente mandar para o PagSeguro
             $table->string('reference');
             // salvo o cod da transacao no pagseguro
@@ -31,7 +31,7 @@ class CreateUserOrderTable extends Migration
             //chaves estrageiras
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('store_id')->references('id')->on('stores');
+            //$table->foreign('store_id')->references('id')->on('stores');
 
 
 

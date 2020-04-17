@@ -1,3 +1,4 @@
+
 # PI 3 Semestre SampleStore
 
 ## Branches
@@ -40,6 +41,7 @@ dos formularios em hidden.
 
 **iniciando meus pedidos**
 
+
 **Fazendo Upload de audio file para storage e criando referencia e armazenando a referencia no DB **
 
 ** Audio Funcionando ***
@@ -54,6 +56,10 @@ dos formularios em hidden.
 
 ** Finalizando notificacoes para loja **
 
+** Pag só samples ** inserindo todas categorias na home fora do menu
+
+** Controlle de Usuário ADMIN e USER **
+
 ** Pag só samples **
 inserindo todas categorias na home fora do menu 
 
@@ -64,6 +70,7 @@ inserindo todas categorias na home fora do menu
 ** Organizando cod JS do pagseguro** npm rum dev npm rum watch !!
 
 ## Vini
+
 
 
 

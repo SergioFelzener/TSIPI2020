@@ -17,8 +17,9 @@ use App\Http\Controllers\admin\ProductPhotoController;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/produto/{slug}', 'HomeController@single')->name('produto.single');
-
+Route::get('/samples', 'samplesController@index')->name('samples');
 Route::get('/categoria/{slug}', 'CategoriaController@index')->name('categoria.single');
+
 Route::get('/store/{slug}', 'StoreController@index')->name('store.single');
 
 Route::prefix('cart')->name('cart.')->group(function(){
@@ -39,9 +40,15 @@ Route::prefix('checkout')->name('checkout.')->group(function(){
     Route::get('/thanks', 'CheckoutController@thanks')->name('thanks');
 });
 
+Route::get('my-orders', 'UserOrderController@index')->name('user.orders')->middleware('auth');
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'access.control.store.admin']], function(){
+
     Route::prefix('admin')->name('admin.')->namespace('admin')->group(function(){
+
+        Route::get('notifications', 'NotificationController@notifications')->name('notifications.index');
+        Route::get('notifications/read-all', 'NotificationController@readAll')->name('notifications.read.all');
+        Route::get('notifications/read/{notification}', 'NotificationController@read')->name('notifications.read');
         Route::resource('stores', 'storecontroller');
         Route::resource('produtos', 'produtocontroller');
         Route::resource('categorias', 'categoriacontroller');
@@ -209,3 +216,25 @@ Route::get('/model', function(){
 
   //});
 
+Route::get('not', function (){
+
+    // $user = \App\User::find(1);
+    //$user->notify(new \App\Notifications\StoreReceiveNewOrder());
+
+    //$notification = $user->notifications->first();
+
+    // $notification->markAsread();
+    //$stores = [1, 2, 3];
+
+
+    //return $stores->map(function($store){
+    //    return $store->user;
+    // });
+    // dd($stores);
+
+
+
+
+   // return $user->readNotifications->count();
+
+});

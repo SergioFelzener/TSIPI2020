@@ -29,7 +29,7 @@
     </div>
     <div class="form-group">
         <label>Telefone</label>
-        <input type="text" name="phone" class="form-control @error('phone')is-invalid @enderror" value="{{old('phone')}}">
+        <input type="text" id="phone" name="phone" class="form-control @error('phone')is-invalid @enderror" value="{{old('phone')}}">
         @error('phone')
         <div class="invalid-feedback">
                 {{ $message }}
@@ -57,3 +57,14 @@
 
 @endsection
 
+@section('scripts')
+
+
+<script>
+    // Input mask no campo telefone com formatacao para celular brasil
+    let imphone = new Inputmask('(99) 99999-9999');
+    imphone.mask(document.getElementById('phone'));
+
+</script>
+
+@endsection
