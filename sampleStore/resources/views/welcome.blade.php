@@ -16,6 +16,7 @@
                     <h2 class="card-title">{{$produto->name}}</h2>
                     <p class="card-text">
                         {{ $produto->description }}
+                        <!-- {{ $produto->audio->audio }} -->
                     </p>
                     <h3>
                         R$ : {{ number_format($produto->price, '2', ',', '.')}}

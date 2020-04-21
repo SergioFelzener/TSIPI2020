@@ -24,7 +24,7 @@
         <body>
             <!-- NAV ORIGINAL -->
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
 
             <a class="navbar-brand" href="{{route('home')}}">Marketplace Sample Store</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                     <li class="nav-item @if(request()->is('/')) active @endif">
                         <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
-
+                
                     @foreach ($categorias as $categoria)
                     <li class="nav-item @if(request()->is('categoria/' . $categoria->slug)) active @endif">
                         <a class="nav-link" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">{{$categoria->name}}</a>
@@ -69,11 +69,11 @@
                                     </li>
                                 @endauth
                             <a href="{{route('cart.index')}}" class="nav-link">
-                                <!-- Se existir produtos no carrino -->
+                                
                                 @if(session()->has('cart'))
-                                <!-- Mostra a quantida de produtos no carrinho mesmo se existir muitos produtos iguais -->
+                                
                                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                                <!-- Mostra a quantida de produtos no carrinho somando mesmo se forem iguais -->
+                                
                                     <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                                 @endif
                                 <i class="fa fa-cart-arrow-down fa-2x"></i>
@@ -82,11 +82,56 @@
                         </ul>
                     </div>
             </div>
-        </nav>
 
-         <!-- NAV -->
+        </nav>  NAV ORIGINAL -->
 
-    <div class="container">
+        <!-- Nav Layout Vini -->
+        <nav>
+        <div class="logo">
+            <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+        </div>
+
+        <ul id="navigation-links">
+            <li><a href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('samples')}}">Samples</a></li>
+                @if(auth())
+                <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
+                <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
+                @endif
+
+                @auth
+                    <li>
+                        <a class="login-button" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
+                        <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                        @csrf
+                        </form>
+                    </li>
+                    
+                @endauth    
+        </ul>
+
+        <div id="cart-icon">
+            <a href="{{route('cart.index')}}">
+                <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                @if(session()->has('cart'))
+                                
+                    <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
+                            
+                    <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
+                @endif
+            </a>
+        </div>
+
+        <div class="menu-icon">
+            <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
+        </div>
+
+    </nav>
+
+    <!-- Nav Layout Vini -->
+
+
+    <div class="container" id="containing-samples">
         @include('flash::message')
         @yield('content')
     </div>
