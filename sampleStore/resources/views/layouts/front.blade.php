@@ -88,13 +88,13 @@
         <!-- Nav Layout Vini -->
         <nav>
         <div class="logo">
-            <a href="/"><img id="logo" src="./assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+            <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
         </div>
 
         <ul id="navigation-links">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('samples')}}">Samples</a></li>
-                @if(!auth())
+                @if(auth())
                 <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
                 <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
                 @endif
@@ -112,7 +112,7 @@
 
         <div id="cart-icon">
             <a href="{{route('cart.index')}}">
-                <img id="cart-icon" src="./assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
                 @if(session()->has('cart'))
                                 
                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
@@ -123,7 +123,7 @@
         </div>
 
         <div class="menu-icon">
-            <img src="./assets/img/menu-icon.svg" alt="Ìcone do menu">
+            <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
         </div>
 
     </nav>

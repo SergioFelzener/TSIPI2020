@@ -11043,3 +11043,20 @@ body .menu-icon {
   }
 }
 
+body {
+  color: white;
+}
+
+body table tr th {
+  color: white;
+}
+
+body table tr td {
+  color: white;
+}
+
+body .card,
+body .card-body {
+  color: #222222;
+}
+
