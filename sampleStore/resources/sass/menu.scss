@@ -79,6 +79,12 @@ body{
    }
 }
 
+.nav-wrapper{
+    width: 100%;
+    background-color: $secondary-color;
+    z-index: 9;
+}
+
 // Buttons
 
 .login-button{
