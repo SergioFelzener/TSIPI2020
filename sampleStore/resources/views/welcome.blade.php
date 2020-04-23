@@ -35,7 +35,9 @@
                                 <img src="{{asset('assets/img/no-photo.jpg')}}"  alt="" class="card-img-top">
                             @endif
                                 <div class="player-add-icon">
-                                    <img src="./assets/icons/add-icon.svg" alt="Add to cart icon">
+                                    <a href="{{route('produto.single', ['slug' => $produto->slug])}}">
+                                        <img src="./assets/img/audio/add-icon.svg" alt="Add to cart icon">
+                                    </a>
                                 </div>
                             </div>
                     
@@ -47,7 +49,7 @@
                             <div class="player-controls">
                                 
                                 <div class="seekbar-wrapper">
-                                    <audio src="{{ $produto->audio->audio }}" class="sample-audio"></audio>
+                                    <audio src="{{ asset('storage/' . $produto->audio->audio)}}" class="sample-audio"></audio>
                     
                                     <div class="player-current-duration">
                                         <span id="current-duration">00:00</span>
@@ -64,15 +66,15 @@
                     
                                 <div class="buttons-wrapper">
                                     <div class="favorite-button">
-                                        <img class="favorite-button-icon" src="./assets/icons/heart-icon.svg" alt="Favorite icon">
+                                        <img class="favorite-button-icon" src="./assets/img/audio/heart-icon.svg" alt="Favorite icon">
                                     </div>
                                     
                                     <div id="paused" class="play-pause-button">
-                                        <img class="play-pause-button-icon" src="./assets/icons/play-icon.svg" alt="Play/Pause icon">
+                                        <img class="play-pause-button-icon" src="./assets/img/audio/play-icon.svg" alt="Play/Pause icon">
                                     </div>
                                     
                                     <div class="volume-button">
-                                        <img class="volume-button-icon" src="./assets/icons/audio-icon.svg" alt="Volume icon">
+                                        <img class="volume-button-icon" src="./assets/img/audio/audio-icon.svg" alt="Volume icon">
                                     </div>
                                     
                                 </div>
