@@ -94,10 +94,10 @@
         <ul id="navigation-links">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('samples')}}">Samples</a></li>
-                @if(auth())
+                @guest
                 <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
                 <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
-                @endif
+                @endauth
 
                 @auth
                     <li>
