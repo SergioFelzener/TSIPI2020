@@ -88,7 +88,7 @@
         <!-- Nav Layout Vini -->
         <nav>
         <div class="logo">
-            <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+            <a href="/"><img id="logo" style="width: 300px; height: auto;" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
         </div>
 
         <ul id="navigation-links">

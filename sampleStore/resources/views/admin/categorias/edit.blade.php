@@ -25,7 +25,7 @@
 
         <div class="form-group">
             <label>Slug</label>
-            <input type="text" name="slug" class="form-control" value="{{$categoria->slug}}">
+            <input type="text" name="slug" class="form-control" value="{{$categoria->slug}}" readonly>
         </div>
 
         <div>
