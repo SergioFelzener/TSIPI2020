@@ -1,7 +1,78 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div class="sign-container">
+
+<div class="sign">
+
+    <div class="side">
+
+        <img src="./assets/img/logo-icon-footer.png" alt="Logo simpler">
+
+    </div>
+
+    <form method="POST" action="{{ route('login') }}" class="inputs">
+    @csrf
+
+        <h1>Entrar</h1>
+
+        @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+
+        @error('password')
+            <span class="invalid-feedback" role="alert">
+                 <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+
+        <div class="input-field">
+            <input type="text" placeholder="E-mail" name="email" required autocomplete="email">
+        </div>
+
+        <div class="input-field">
+            <input type="password" placeholder="Senha" name="password" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-primary">Entrar</button>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+            <label class="form-check-label" for="remember">
+                {{ __('Remember Me') }}
+            </label>
+        </div>
+
+        @if (Route::has('password.request'))
+            <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+            </a>
+        @endif
+
+        <div class="link-field">
+            <span>Não possui uma conta ?</span>
+            <a href="#" class="register">Registre-se aqui</a>
+        </div>
+
+
+    </form>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +140,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

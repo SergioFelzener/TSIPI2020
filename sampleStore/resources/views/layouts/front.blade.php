@@ -11,7 +11,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
         <script defer src="{{asset('js/app.js')}}"></script>
+
 
         <style>
             .front.row {
@@ -86,52 +88,53 @@
         </nav>  NAV ORIGINAL -->
 
         <!-- Nav Layout Vini -->
-        <nav>
-        <div class="logo">
-            <a href="/"><img id="logo" style="width: 300px; height: auto;" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
-        </div>
+<<<<<< front-home
+        <div class="nav-wrapper">
+            <nav >
+            <div class="logo">
+                <a href="/"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
+            </div>
 
-        <ul id="navigation-links">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('samples')}}">Samples</a></li>
-                @guest
-                <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
-                <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
-                @endauth
+            <ul id="navigation-links">
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('samples')}}">Samples</a></li>
+                    @guest
+                    <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
+                    <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
+                    @endauth
 
-                @auth
-                    <li>
-                        <a class="login-button" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
-                        <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
-                        @csrf
-                        </form>
-                    </li>
-                    
-                @endauth    
-        </ul>
+                    @auth
+                        <li>
+                            <a class="login-button" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
+                            <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                            @csrf
+                            </form>
+                        </li>
+                        
+                    @endauth    
+            </ul>
 
-        <div id="cart-icon">
-            <a href="{{route('cart.index')}}">
-                <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
-                @if(session()->has('cart'))
-                                
-                    <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                            
-                    <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
-                @endif
-            </a>
-        </div>
+            <div id="cart-icon">
+                <a href="{{route('cart.index')}}">
+                    <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
+                    @if(session()->has('cart'))        
+                        <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>          
+                        <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
+                    @endif
+                </a>
+            </div>
 
-        <div class="menu-icon">
-            <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
-        </div>
+            <div class="menu-icon">
+                <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
+            </div>
 
-    </nav>
+        </nav>
+    </div>
 
     <!-- Nav Layout Vini -->
 
 
-    <div class="container" id="containing-samples">
+    <div class="container-app" id="containing-samples">
         @include('flash::message')
         @yield('content')
     </div>
