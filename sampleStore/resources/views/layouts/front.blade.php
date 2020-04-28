@@ -88,7 +88,6 @@
         </nav>  NAV ORIGINAL -->
 
         <!-- Nav Layout Vini -->
-<<<<<< front-home
         <div class="nav-wrapper">
             <nav >
             <div class="logo">

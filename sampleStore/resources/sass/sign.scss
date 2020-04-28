@@ -13,6 +13,7 @@
         position: relative;
         width: 1000px;
         height: 600px;
+        margin-top: -120px;
         background-color: $secondary-color;
         border-radius: 8px;
         overflow: hidden;
@@ -60,7 +61,7 @@
                     border-bottom: 1px solid white;
                     outline: none;
                     color: white;
-                    padding: 10px 0px;
+                    padding: 10px 5px;
                 }
             }
 
@@ -84,7 +85,6 @@
                     cursor: pointer;
                     font-weight: 600;
                 }
-
 
             }
 
