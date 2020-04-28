@@ -135,7 +135,7 @@
     <!-- Nav Layout Vini -->
 
 
-    <div class="container" id="containing-samples">
+    <div class="container-app" id="containing-samples">
         @include('flash::message')
         @yield('content')
     </div>
