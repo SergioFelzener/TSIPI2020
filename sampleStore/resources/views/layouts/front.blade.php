@@ -88,19 +88,20 @@
         </nav>  NAV ORIGINAL -->
 
         <!-- Nav Layout Vini -->
+<<<<<< front-home
         <div class="nav-wrapper">
             <nav >
             <div class="logo">
-                <a href="/"><img id="logo" src="../assets/img/simpler-logo.svg" alt="Logo Simpler"></a>
+                <a href="/"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
             </div>
 
             <ul id="navigation-links">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('samples')}}">Samples</a></li>
-                    @if(auth())
+                    @guest
                     <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
                     <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
-                    @endif
+                    @endauth
 
                     @auth
                         <li>
@@ -116,10 +117,8 @@
             <div id="cart-icon">
                 <a href="{{route('cart.index')}}">
                     <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
-                    @if(session()->has('cart'))
-                                    
-                        <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                                
+                    @if(session()->has('cart'))        
+                        <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>          
                         <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                     @endif
                 </a>
