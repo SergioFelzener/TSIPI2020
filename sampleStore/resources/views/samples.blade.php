@@ -2,14 +2,15 @@
 
 @section('content')
 
-<h2>Samples</h2>
+<div class="sample-wrapper">
 
-<div class="carousel-wrapper">
+        <div class="samples-title">
+            <h1>Todos os samples</h1>
+        </div>
 
-    <div class="owl-carousel">
-
+        <div class="all-samples-container">
         @foreach($produtos as $key => $produto)
-        <div class="item">
+        <div class="sample-item">
                     <div class="player-container">
 
                         <div class="player-cover-image">
@@ -68,7 +69,7 @@
                 </div>
         </div>   
         @endforeach
-    </div>
+        </div>
 
 </div>
 

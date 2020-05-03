@@ -50,7 +50,7 @@
 
             <div class="link-field">
                 <span>Já possui uma conta ?</span>
-                <a href="#" class="login">Entre aqui</a>
+                <a href="{{ route('login') }}" class="login">Entre aqui</a>
             </div>
 
 

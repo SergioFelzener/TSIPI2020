@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>SampleStore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .container{
+            width:100%!important;
+            margin: 0px!important;
+            padding: 0px!important;
+        }
+    </style>
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-        <a class="navbar-brand" href="{{route('home')}}">Marketplace SS</a>
+    <nav class="navbar nav-sample">
+        <a class="navbar-brand" href="{{route('home')}}">
+            <img class="sample-logo" src="../assets/img/SampleStoreLogo.png" alt="Sample Store Logo">
+        </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -2,11 +2,81 @@
 
 @section('content')
 
-<div class="row">
-    <div class="col-12">
-        <h2>Carrinho de Compras</h2>
-        <hr>
+<div class="samples-title">
+    <h1>Meu carrinho</h1>
+</div>
+
+@if($cart)
+<div class="cart-container">  
+
+    @php $total = 0; @endphp
+    @foreach($cart as $c)
+    <div class="cart-item">
+        <div class="cart-item-image">
+            
+        </div>
+
+        <div class="cart-item-details">
+            <p>{{$c['name']}}</p>
+
+            <p>Category</p>
+
+            <p>R$ {{$c['price'], 2, ',' , '.'}}</p>
+            @php
+
+            $subtotal = $c['price'] * $c['amount'];
+            $total += $subtotal;
+
+            @endphp
+        </div>
+
+        <div class="cart-delete">
+            <a href="{{route('cart.remove', ['slug' => $c['slug']])}}">
+                <img src="../assets/img/delete-icon.svg" alt="delete">
+            </a>
+            </a>
+        </div>
     </div>
+    @endforeach
+
+</div>
+
+<div class="cart-container">  
+
+    <div class="cart-item-total">
+        <div class="cart-item-image">
+            <p>Total</p> 
+        </div>
+
+        <div class="cart-item-details">
+            
+            <p>R$ {{$total, 2, ',' , '.'}}</p>
+
+        </div>
+
+        <div class="cart-delete">
+            <a href="{{route('cart.cancel')}}">
+                <img src="../assets/img/delete-icon.svg" alt="delete">
+            </a>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="double-buttons-cart">
+        <a href="{{route('home')}}" class="button-cancel">Continuar comprando</a href="">
+        <a href="{{route('checkout.index')}}" class="button-checkout">Finalizar Compra</a>
+</div>
+
+@else
+    <div class="alert alert-danger">CARRINHO VAZIO</div>
+@endif
+
+
+
+<!-- <div class="row">
+        
     <div class="col-12">
         @if($cart)
         <table class="table table-striped">
@@ -53,6 +123,6 @@
             <div class="alert alert-danger">CARRINHO VAZIO</div>
         @endif
     </div>
-</div>
+</div> -->
 
 @endsection

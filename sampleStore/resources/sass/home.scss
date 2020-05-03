@@ -365,6 +365,19 @@ footer{
     overflow: hidden;
     box-shadow: 0px 8px 20px #3a39392f;
 
+    a.ver-tudo{
+        position: absolute;
+        top: 90%;
+        right: 10%;
+        color: $secondary-color;
+        font-weight: 600;
+        transition: 150ms ease;
+
+        &:hover{
+            color: #5f5f5f;
+        }
+    }
+
     .category-cover-image{
         position: relative;
         display: flex;
@@ -382,15 +395,15 @@ footer{
     }
     
     .category-description{
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-flow: column;
 
-
         .category-name{
             font-size: 18px;
-            margin: 10px 0 4px 0;
+            margin: 15px 0 4px 0;
             font-weight: 600;
             color: $secondary-color;
         }
@@ -562,6 +575,7 @@ footer{
     align-items: center;
     flex-flow: row nowrap!important;
     width: 100%;
+    overflow: hidden;
 }
 
 .carousel-wrapper{
@@ -571,6 +585,8 @@ footer{
     align-items: center;
     flex-flow: row nowrap!important;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .owl-carousel{
