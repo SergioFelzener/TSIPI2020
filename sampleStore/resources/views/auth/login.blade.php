@@ -42,20 +42,20 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-            <label class="form-check-label" for="remember">
+            <label style="color: white;" class="form-check-label" for="remember">
                 {{ __('Remember Me') }}
             </label>
         </div>
 
         @if (Route::has('password.request'))
             <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
+                {{ __('Esqueceu a senha?') }}
             </a>
         @endif
 
         <div class="link-field">
             <span>Não possui uma conta ?</span>
-            <a href="#" class="register">Registre-se aqui</a>
+            <a href="{{ route('register') }}" class="register">Registre-se aqui</a>
         </div>
 
 

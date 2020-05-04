@@ -105,6 +105,8 @@
                     <p class="category-name">{{$categoria->name}}</p>
                     <p class="category-description-text">{{ $categoria->description }}</p>
                 </div>
+
+                <a class="ver-tudo" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">Ver tudo</a>
             </div>
                
         </div>   

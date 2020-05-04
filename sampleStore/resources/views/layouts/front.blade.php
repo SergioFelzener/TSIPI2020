@@ -88,7 +88,6 @@
         </nav>  NAV ORIGINAL -->
 
         <!-- Nav Layout Vini -->
-<<<<<< front-home
         <div class="nav-wrapper">
             <nav >
             <div class="logo">
@@ -101,6 +100,12 @@
                     @guest
                     <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
                     <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
+                    @endauth
+
+                    @auth
+                        <li class="nav-item @if(request()->is('my-orders')) active @endif">
+                            <a href="{{ route('user.orders') }}" class="nav-link">Meus Pedidos</a>
+                        </li>
                     @endauth
 
                     @auth
