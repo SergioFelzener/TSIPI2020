@@ -11713,6 +11713,13 @@ footer .copy span {
   }
 }
 
+@media screen and (max-width: 730px) {
+  .item {
+    margin-right: 140px !important;
+    margin-left: 100px !important;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .player-container {
     width: 280px !important;

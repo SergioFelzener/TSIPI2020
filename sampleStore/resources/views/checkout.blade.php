@@ -8,7 +8,7 @@
 @section('content')
 
 
-    <div class="container-checkout">
+    <div class="container container-checkout">
         <h2>Pagamento</h2>
         <hr>
             <div class="col-md-6">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
 
-                <button class="btn-checkout">Efetuar pagamento</button>
+                <button class="btn-checkout processCheckout">Efetuar pagamento</button>
                 <a href="{{route('home')}}" class="btn-secondary">Cancelar</a>
 
                 </form>
