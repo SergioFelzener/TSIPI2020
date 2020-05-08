@@ -8,11 +8,11 @@
 @section('content')
 
 
-    <div class="container">
-        <h2>Dados para pagamento</h2>
+    <div class="container-checkout">
+        <h2>Pagamento</h2>
         <hr>
             <div class="col-md-6">
-                <form action="" method="POST">
+                <form class="form-checkout" action="" method="POST">
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="">Nome do Cartão</label>
@@ -46,7 +46,8 @@
                         </div>
                     </div>
 
-                <button class="btn btn-lg btn-success processCheckout">Efetuar pagamento</button>
+                <button class="btn-checkout">Efetuar pagamento</button>
+                <a href="{{route('home')}}" class="btn-secondary">Cancelar</a>
 
                 </form>
             </div>

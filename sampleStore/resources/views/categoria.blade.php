@@ -37,11 +37,11 @@
                                     <audio src="{{ asset('storage/' . $produto->audio->audio)}}" class="sample-audio"></audio>
                     
                                     <div class="player-current-duration">
-                                        <span id="current-duration">00:00</span>
+                                        <span class="current-duration">00:00</span>
                                     </div>
                     
                                     <div class="player-seekbar">
-                                        <input id="seekbar" type="range" min="0" max="" step="1">
+                                        <input class="seekbar" type="range" min="0" max="" step="1">
                                     </div>
                     
                                     <div class="player-total-duration">

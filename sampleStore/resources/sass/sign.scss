@@ -124,6 +124,35 @@
     }
 }
 
+.btn-secondary,
+.btn-checkout {
+    background: none;
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    padding: 12px 56px;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    margin: 10px 0px;
+    transition: 160ms ease-in-out;
+    font-weight: 600;
+
+    &:hover{
+        background-color: rgb(255, 73, 82);
+    }
+}
+
+.btn-checkout{
+    background-color: $secondary-color;
+
+    &:hover{
+        background-color: #3a3a3a;
+    }
+}
+
 // Media
 
 @media screen and (max-width: 800px){

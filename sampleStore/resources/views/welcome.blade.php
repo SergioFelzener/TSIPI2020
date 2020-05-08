@@ -52,11 +52,11 @@
                                     <audio src="{{ asset('storage/' . $produto->audio->audio)}}" class="sample-audio"></audio>
                     
                                     <div class="player-current-duration">
-                                        <span id="current-duration">00:00</span>
+                                        <span class="current-duration">00:00</span>
                                     </div>
                     
                                     <div class="player-seekbar">
-                                        <input id="seekbar" type="range" min="0" max="" step="1">
+                                        <input class="seekbar" type="range" min="0" max="" step="1">
                                     </div>
                     
                                     <div class="player-total-duration">
@@ -69,11 +69,11 @@
                                         <img class="favorite-button-icon" src="./assets/img/audio/heart-icon.svg" alt="Favorite icon">
                                     </div>
                                     
-                                    <div id="paused" class="play-pause-button">
+                                    <div data-pause="paused" class="play-pause-button">
                                         <img class="play-pause-button-icon" src="./assets/img/audio/play-icon.svg" alt="Play/Pause icon">
                                     </div>
                                     
-                                    <div class="volume-button">
+                                    <div class="volume-button" data-mute="">
                                         <img class="volume-button-icon" src="./assets/img/audio/audio-icon.svg" alt="Volume icon">
                                     </div>
                                     
@@ -140,7 +140,7 @@
         </div>
 
         <div class="copy">
-            <span>Simpler © Todos os direitos reservados - 2020</span>
+            <span>SampleStore © Todos os direitos reservados - 2020</span>
         </div>
 
     </footer>

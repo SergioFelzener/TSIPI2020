@@ -5,12 +5,19 @@ $('.owl-carousel').owlCarousel({
     responsive:{
         0:{
             items:1,
+            nav:false
         },
-        600:{
+        750:{
             items:2,
+            nav:false
         },
-        1000:{
-            items:2,
+        1100:{
+            items:3,
+            nav:false
+        },
+        1450:{
+            items:4,
+            nav:false
         }
     }
 })
