@@ -22,12 +22,17 @@
             <p>Category</p>
 
             <p>R$ {{$c['price'], 2, ',' , '.'}}</p>
+
+            <p>{{$c['amount']}}</p>
             @php
 
             $subtotal = $c['price'] * $c['amount'];
             $total += $subtotal;
 
             @endphp
+
+            <p>{{($subtotal), 2, ',' , '.'}}</p>
+            
         </div>
 
         <div class="cart-delete">

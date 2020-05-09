@@ -176,7 +176,7 @@ body{
                 }
             }
 
-            #seekbar{
+            .seekbar{
                 -webkit-appearance: none;
                 width: 170px;
 
@@ -271,6 +271,11 @@ body{
     
 }
 
+.login-button{
+    color: white!important;
+    transition: 100ms ease;
+}
+
 footer{
     position: relative;
     width: 100%;
@@ -330,7 +335,7 @@ footer{
                 outline: none;
 
                 &::placeholder{
-                    color: white;
+                    color: #ff7c7c;
                 }
             }
         }
@@ -547,6 +552,15 @@ footer{
     }
 }
 
+@media screen and (max-width: 730px){
+
+    .item{
+        margin-right: 140px!important;
+        margin-left: 100px!important;
+    }
+
+}
+
 @media screen and (max-width: 400px){
     .player-container{
         width: 280px!important;
@@ -565,9 +579,12 @@ footer{
 
 }
 
-
-
 // OWL
+.owl-nav,
+.owl-dots{
+    display: none!important;
+}
+
 .carousel-wrapper-1{
     margin: -120px auto 0 auto;
     display: flex;

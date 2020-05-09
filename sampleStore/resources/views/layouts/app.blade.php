@@ -14,11 +14,71 @@
             margin: 0px!important;
             padding: 0px!important;
         }
+
     </style>
 
 </head>
 <body>
-    <nav class="navbar nav-sample">
+
+<!-- Nav Vini -->
+<div class="nav-wrapper">
+            <nav >
+            <div class="logo">
+                <a href="{{route('home')}}"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
+            </div>
+
+            @auth
+            <ul id="navigation-links">
+
+                <li class=" @if(request()->is('admin/orders*')) active @endif">
+                    <a class="" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
+                </li>
+
+                <li class=" @if(request()->is('admin/stores*')) active @endif">
+                    <a class="" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
+                    <a class="nav-link" href="{{ route('admin.produtos.index') }}">Produtos</a>
+                </li>
+
+                <li class=" @if(request()->is('admin/categorias*')) active @endif">
+                    <a class="" href="{{ route('admin.categorias.index') }}">Categorias</a>
+                </li>
+
+                <li class="">
+                    <a href="{{ route('admin.notifications.index') }}" class="">
+                        <span class="badge badge-danger">{{auth()->user()->unreadNotifications->count()}}</span>
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="login-button" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
+                    <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                        @csrf
+                    </form>
+                </li>
+
+                <li class="">
+                    <span class="">{{ auth()->user()->name }}</span>
+                </li>
+                        
+   
+            </ul>
+            @endauth
+
+            <div class="menu-icon">
+                <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
+            </div>
+
+        </nav>
+    </div>
+
+
+
+<!-- NAV Original -->
+    <!-- <nav class="navbar nav-sample">
         <a class="navbar-brand" href="{{route('home')}}">
             <img class="sample-logo" src="../assets/img/SampleStoreLogo.png" alt="Sample Store Logo">
         </a>
@@ -32,9 +92,11 @@
                 <li class="nav-item @if(request()->is('admin/orders*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
                 </li>
+
                 <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.produtos.index') }}">Produtos</a>
                 </li>
@@ -65,7 +127,8 @@
                 </div>
                 @endauth
         </div>
-    </nav>
+    </nav> -->
+
     <div class="container">
 
         @include('flash::message')
