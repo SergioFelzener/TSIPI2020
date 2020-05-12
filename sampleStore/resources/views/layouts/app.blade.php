@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        .container{
-            width:100%!important;
-            margin: 0px!important;
-            padding: 0px!important;
-        }
-
     </style>
 
 </head>
@@ -22,20 +16,20 @@
 
 <!-- Nav Vini -->
 <div class="nav-wrapper">
-            <nav >
+            <nav class="nav-app">
             <div class="logo">
-                <a href="{{route('home')}}"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
+                <a href="{{route('home')}}"><img id="logo" src="../../../assets/img/SampleStoreLogo.png" alt="Logo SampleStore"></a>
             </div>
 
             @auth
             <ul id="navigation-links">
 
                 <li class=" @if(request()->is('admin/orders*')) active @endif">
-                    <a class="" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
+                    <a class="nav-link" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
                 </li>
 
                 <li class=" @if(request()->is('admin/stores*')) active @endif">
-                    <a class="" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
@@ -43,11 +37,15 @@
                 </li>
 
                 <li class=" @if(request()->is('admin/categorias*')) active @endif">
-                    <a class="" href="{{ route('admin.categorias.index') }}">Categorias</a>
+                    <a class="nav-link" href="{{ route('admin.categorias.index') }}">Categorias</a>
+                </li>
+
+                <li class="username-span">
+                    <span class="">{{ auth()->user()->name }}</span>
                 </li>
 
                 <li class="">
-                    <a href="{{ route('admin.notifications.index') }}" class="">
+                    <a href="{{ route('admin.notifications.index') }}" class="nav-link">
                         <span class="badge badge-danger">{{auth()->user()->unreadNotifications->count()}}</span>
                         <i class="fa fa-bell"></i>
                     </a>
@@ -58,10 +56,6 @@
                     <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
                         @csrf
                     </form>
-                </li>
-
-                <li class="">
-                    <span class="">{{ auth()->user()->name }}</span>
                 </li>
                         
    

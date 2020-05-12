@@ -1,5 +1,5 @@
 const menu_icon = document.querySelector('.menu-icon')
-const nav_ul = document.querySelector('ul')
+const nav_ul = document.querySelector('#navigation-links')
 
 menu_icon.addEventListener('click', () => {
 

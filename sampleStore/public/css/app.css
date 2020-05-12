@@ -11033,7 +11033,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-body nav {
+body nav.nav-app {
   width: 100%;
   height: 100px !important;
   display: flex;
@@ -11051,7 +11051,7 @@ body .logo img {
   width: 140px;
 }
 
-body ul {
+body nav.nav-app ul {
   transition: 150ms ease;
   list-style: none;
   display: flex;
@@ -11060,17 +11060,18 @@ body ul {
   margin: 0;
 }
 
-body ul li:not(:last-child) a {
+body nav.nav-app ul li:not(:last-child) a.nav-link,
+body nav.nav-app ul li:not(:last-child) span {
   margin-right: 60px;
   text-decoration: none;
   color: white;
 }
 
-body ul li a {
+body nav.nav-app ul li a {
   transition: 100ms ease;
 }
 
-body ul li a:hover {
+body nav.nav-app ul li a:hover {
   color: #dddddd;
 }
 
@@ -11114,27 +11115,27 @@ body .menu-icon {
 }
 
 .open {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 @media screen and (max-width: 1250px) {
-  nav {
-    padding: 20px 150px !important;
+  nav.nav-app {
+    padding: 20px 50px !important;
   }
 }
 
 @media screen and (max-width: 1050px) {
-  nav {
-    padding: 20px 50px !important;
+  nav.nav-app {
+    padding: 20px 30px !important;
   }
 }
 
 @media screen and (max-width: 900px) {
-  nav {
-    padding: 20px 50px !important;
+  nav.nav-app {
+    padding: 20px 30px !important;
   }
 
-  nav ul {
+  nav.nav-app ul {
     transform: translateX(100%);
     width: 100%;
     height: 100vh;
@@ -11145,11 +11146,11 @@ body .menu-icon {
     background-color: #222222;
   }
 
-  nav ul li {
+  nav.nav-app ul li {
     margin: 25px;
   }
 
-  nav ul li a {
+  nav.nav-app ul li a {
     margin-right: 0 !important;
   }
 
@@ -11174,7 +11175,7 @@ body .menu-icon {
 }
 
 @media screen and (max-width: 350px) {
-  nav {
+  nav.nav-app {
     padding: 20px !important;
   }
 
@@ -11451,7 +11452,7 @@ body .card-body {
 footer {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -11619,6 +11620,7 @@ footer .copy span {
   }
 
   footer {
+    height: 300px !important;
     flex-flow: column;
   }
 
@@ -11962,17 +11964,6 @@ footer .copy span {
   }
 }
 
-@media screen and (min-width: 576px) {
-  .container {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    margin: 0 !important;
-    height: auto !important;
-  }
-}
-
 .sample-wrapper {
   width: 100%;
   display: flex;
@@ -12242,5 +12233,29 @@ footer .copy span {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  padding: 20px !important;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 10px !important;
+  }
+}
+
+.btn {
+  margin-bottom: 5px !important;
+  margin-right: 5px !important;
+}
+
+.username-span {
+  color: white;
+}
+
+.img-store {
+  margin-bottom: 10px;
+  max-width: 350px;
 }
 

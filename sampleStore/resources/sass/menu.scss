@@ -16,7 +16,7 @@ body{
     background-color: #272727;
     font-family: 'Montserrat', sans-serif;
 
-    nav{
+    nav.nav-app{
         width: 100%;
         height: 100px!important;
         display: flex;
@@ -35,7 +35,7 @@ body{
 
     }
     
-    ul{
+    nav.nav-app ul{
         transition: 150ms ease;
         list-style: none;
         display: flex;
@@ -45,13 +45,12 @@ body{
 
         li:not(:last-child){
 
-            a{
+            a.nav-link,
+            span{
                 margin-right: 60px;
                 text-decoration: none;
                 color: white;
-
             }
-
             
         }
 
@@ -110,31 +109,31 @@ body{
 // Utils
 
 .open{
-    transform: translateX(0);
+    transform: translateX(0)!important;
 }
 
 // Media queries
 
 @media screen and (max-width: 1250px){
     
-    nav{
-        padding: 20px 150px!important;
+    nav.nav-app{
+        padding: 20px 50px!important;
     }
 
 }
 
 @media screen and (max-width: 1050px){
     
-    nav{
-        padding: 20px 50px!important;
+    nav.nav-app{
+        padding: 20px 30px!important;
     }
 
 }
 
 @media screen and (max-width: 900px){
     
-    nav{
-        padding: 20px 50px!important;
+    nav.nav-app{
+        padding: 20px 30px!important;
 
         ul{
             transform: translateX(100%);
@@ -182,7 +181,7 @@ body{
 
 @media screen and (max-width: 350px){
 
-    nav{
+    nav.nav-app{
         padding: 20px!important;
     }
 
