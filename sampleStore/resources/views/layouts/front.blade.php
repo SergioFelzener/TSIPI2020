@@ -38,7 +38,7 @@
                     <li class="nav-item @if(request()->is('/')) active @endif">
                         <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                
+
                     @foreach ($categorias as $categoria)
                     <li class="nav-item @if(request()->is('categoria/' . $categoria->slug)) active @endif">
                         <a class="nav-link" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">{{$categoria->name}}</a>
@@ -71,11 +71,11 @@
                                     </li>
                                 @endauth
                             <a href="{{route('cart.index')}}" class="nav-link">
-                                
+
                                 @if(session()->has('cart'))
-                                
+
                                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                                
+
                                     <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                                 @endif
                                 <i class="fa fa-cart-arrow-down fa-2x"></i>
@@ -91,7 +91,7 @@
         <div class="nav-wrapper">
             <nav class="nav-app">
             <div class="logo">
-                <a class="nav-link" href="{{route('home')}}"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo SampleStore"></a>
+                <a class="nav-link" href="{{route('home')}}"><img id="logo" style="width: 250px;" src="../assets/img/Logo02_White.svg" alt="Logo SampleStore"></a>
             </div>
 
             <ul id="navigation-links">
@@ -119,15 +119,15 @@
                             @csrf
                             </form>
                         </li>
-                        
-                    @endauth    
+
+                    @endauth
             </ul>
 
             <div id="cart-icon">
                 <a href="{{route('cart.index')}}">
                     <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
-                    @if(session()->has('cart'))        
-                        <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>          
+                    @if(session()->has('cart'))
+                        <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
                         <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
                     @endif
                 </a>
