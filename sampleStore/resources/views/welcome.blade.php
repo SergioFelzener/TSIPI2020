@@ -121,24 +121,6 @@
             <img src="./assets/img/logo-icon-footer.png" alt="Logo">
         </div>
 
-        <div class="nav-footer">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Sobre</a></li>
-                <li><a href="/">Login</a></li>
-                <li><a href="/">Contato</a></li>
-            </ul>
-
-            <div class="newsletter">
-
-                <div class="input-field">
-                    <p>Newsletter</p>
-                    <input type="text" placeholder="Seu melhor e-mail">
-                </div>
-
-            </div>
-        </div>
-
         <div class="copy">
             <span>SampleStore © Todos os direitos reservados - 2020</span>
         </div>

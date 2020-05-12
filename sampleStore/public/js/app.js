@@ -39845,6 +39845,9 @@ window.onload = function () {
   var seekbar = document.querySelector('.seekbar');
   var sample_total_duration = document.querySelector('.total-duration');
   var sample = document.querySelectorAll('.sample-audio');
+  sample.forEach(function (audio) {
+    audio.loop = true;
+  });
 
   for (var i = 0; i < sample.length; i++) {
     sample[i].id = i;
@@ -39956,7 +39959,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 var menu_icon = document.querySelector('.menu-icon');
-var nav_ul = document.querySelector('ul');
+var nav_ul = document.querySelector('#navigation-links');
 menu_icon.addEventListener('click', function () {
   nav_ul.classList.toggle('open');
 });

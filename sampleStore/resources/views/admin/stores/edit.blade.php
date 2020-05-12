@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <p>
-            <img src="{{asset('storage/'. $store->logo)}}" alt="">
+            <img class="img-store" src="{{asset('storage/'. $store->logo)}}" alt="">
         </p>
         <label for="">Fotos do Produto</label>
         <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" multiple>
@@ -33,7 +33,7 @@
     </div>
 
     <div>
-        <button type="submit" class=" btn btn-lg btn-primary">Atualizar Loja</button>
+        <button type="submit" class=" btn btn-lg btn-success">Atualizar Loja</button>
     </div>
 </form>
 

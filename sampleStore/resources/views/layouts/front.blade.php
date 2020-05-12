@@ -89,22 +89,26 @@
 
         <!-- Nav Layout Vini -->
         <div class="nav-wrapper">
-            <nav >
+            <nav class="nav-app">
             <div class="logo">
-                <a href="/"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo Simpler"></a>
+                <a class="nav-link" href="{{route('home')}}"><img id="logo" src="../assets/img/SampleStoreLogo.png" alt="Logo SampleStore"></a>
             </div>
 
             <ul id="navigation-links">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('samples')}}">Samples</a></li>
+                <li><a class="nav-link" href="{{route('home')}}">Home</a></li>
+                <li><a class="nav-link" href="{{route('samples')}}">Samples</a></li>
                     @guest
-                    <li><a class="login-button" href="{{route('login')}}">Entrar</a></li>
+                    <li><a class="login-button nav-link" href="{{route('login')}}">Entrar</a></li>
                     <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
                     @endauth
 
                     @auth
                         <li class="nav-item @if(request()->is('my-orders')) active @endif">
                             <a href="{{ route('user.orders') }}" class="nav-link">Meus Pedidos</a>
+                        </li>
+
+                        <li class="username-span">
+                            <span class="">{{ auth()->user()->name }}</span>
                         </li>
                     @endauth
 

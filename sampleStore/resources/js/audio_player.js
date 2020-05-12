@@ -10,6 +10,10 @@ const sample_total_duration = document.querySelector('.total-duration')
 
 const sample = document.querySelectorAll('.sample-audio')
 
+sample.forEach( audio => {
+    audio.loop = true
+})
+
 for(let i = 0; i < sample.length; i++){
     sample[i].id = i
 }
