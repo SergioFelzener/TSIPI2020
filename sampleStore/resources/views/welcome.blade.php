@@ -118,7 +118,7 @@
 <footer>
         
         <div class="logo-box">
-            <img src="./assets/img/logo-icon-footer.png" alt="Logo">
+            <img id="logo-footer" src="./assets/img/Logo01_White.svg" alt="Logo">
         </div>
 
         <div class="copy">

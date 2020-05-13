@@ -11048,7 +11048,7 @@ body .logo {
 }
 
 body .logo img {
-  width: 140px;
+  width: 200px;
 }
 
 body nav.nav-app ul {
@@ -11060,11 +11060,11 @@ body nav.nav-app ul {
   margin: 0;
 }
 
-body nav.nav-app ul li:not(:last-child) a.nav-link,
-body nav.nav-app ul li:not(:last-child) span {
+body nav.nav-app ul li:not(:last-child) a.nav-link {
   margin-right: 60px;
   text-decoration: none;
   color: white;
+  text-align: center;
 }
 
 body nav.nav-app ul li a {
@@ -11077,6 +11077,7 @@ body nav.nav-app ul li a:hover {
 
 body #cart-icon {
   width: 40px;
+  margin-left: 20px;
 }
 
 body .menu-icon {
@@ -11124,13 +11125,13 @@ body .menu-icon {
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1090px) {
   nav.nav-app {
     padding: 20px 30px !important;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1070px) {
   nav.nav-app {
     padding: 20px 30px !important;
   }
@@ -11154,6 +11155,10 @@ body .menu-icon {
     margin-right: 0 !important;
   }
 
+  .username-p {
+    margin-right: 0px !important;
+  }
+
   .register-button {
     background-color: #E51E27;
     color: white;
@@ -11171,6 +11176,12 @@ body .menu-icon {
 
   .menu-icon {
     display: block !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #logo {
+    width: 160px !important;
   }
 }
 
@@ -11711,14 +11722,16 @@ footer .copy span {
   }
 
   footer .copy span {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 730px) {
-  .item {
-    margin-right: 140px !important;
-    margin-left: 100px !important;
+  .owl-item,
+  .item,
+  .player-container,
+  .category-box {
+    width: 282px !important;
   }
 }
 
@@ -11735,7 +11748,6 @@ footer .copy span {
 
   .owl-item {
     max-width: 320px !important;
-    margin: 0 5px;
   }
 }
 
@@ -12250,12 +12262,18 @@ footer .copy span {
   margin-right: 5px !important;
 }
 
-.username-span {
+.username-p {
   color: white;
+  text-align: center !important;
+  margin-right: 60px;
 }
 
 .img-store {
   margin-bottom: 10px;
   max-width: 350px;
+}
+
+#logo-footer {
+  width: 280px;
 }
 

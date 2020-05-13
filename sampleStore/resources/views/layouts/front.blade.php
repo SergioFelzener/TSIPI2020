@@ -91,7 +91,7 @@
         <div class="nav-wrapper">
             <nav class="nav-app">
             <div class="logo">
-                <a class="nav-link" href="{{route('home')}}"><img id="logo" style="width: 250px;" src="../assets/img/Logo02_White.svg" alt="Logo SampleStore"></a>
+                <a class="nav-link" href="{{route('home')}}"><img id="logo" src="../assets/img/Logo01_White.svg" alt="Logo SampleStore"></a>
             </div>
 
             <ul id="navigation-links">
@@ -107,8 +107,8 @@
                             <a href="{{ route('user.orders') }}" class="nav-link">Meus Pedidos</a>
                         </li>
 
-                        <li class="username-span">
-                            <span class="">{{ auth()->user()->name }}</span>
+                        <li>
+                            <p class="username-p">{{ auth()->user()->name }}</p>
                         </li>
                     @endauth
 
