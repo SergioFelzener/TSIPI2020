@@ -39841,25 +39841,28 @@ window.onload = function () {
   var play_pause_button = document.querySelectorAll('.play-pause-button');
   var favorite_button = document.querySelectorAll('.favorite-button');
   var volume_button = document.querySelectorAll('.volume-button');
-  var sample_current_duration = document.querySelector('.current-duration');
-  var seekbar = document.querySelector('.seekbar');
-  var sample_total_duration = document.querySelector('.total-duration');
-  var sample = document.querySelectorAll('.sample-audio');
-  sample.forEach(function (audio) {
-    audio.loop = true;
-  });
+  var sample_current_duration = document.querySelectorAll('.current-duration');
+  var seekbar = document.querySelectorAll('.seekbar');
+  var sample_total_duration = document.querySelectorAll('.total-duration');
+  var sample = document.querySelectorAll('.sample-audio'); // Configuring Samples Players
 
   for (var i = 0; i < sample.length; i++) {
+    // Setting unique IDs
     sample[i].id = i;
-  }
+    seekbar[i].id = i;
+    sample_current_duration[i].id = i;
+    sample_total_duration[i].id = i;
+    volume_button[i].id = i;
+    play_pause_button[i].id = i; // Looping all samples
 
-  for (var _i = 0; _i < volume_button.length; _i++) {
-    volume_button[_i].id = _i;
-  }
+    sample[i].loop = true; // Set sample duration
 
-  for (var _i2 = 0; _i2 < play_pause_button.length; _i2++) {
-    play_pause_button[_i2].id = _i2;
-  }
+    seekbar[i].max = sample[i].duration.toFixed(0);
+    sample_total_duration[i].innerHTML = "0:" + sample[i].duration.toFixed(0); // Set sample current time
+
+    sample_current_duration[i].innerHTML = "0:0" + sample[i].currentTime.toFixed(0);
+  } // Play / Pause btns
+
 
   play_pause_button.forEach(function (btn) {
     var id = btn.id;
@@ -39874,7 +39877,8 @@ window.onload = function () {
         sample[id].pause();
       }
     });
-  });
+  }); // Favorite btns
+
   favorite_button.forEach(function (btn) {
     btn.addEventListener('click', function () {
       if (btn.id != 'favorite') {
@@ -39885,7 +39889,8 @@ window.onload = function () {
         btn.firstElementChild.src = '../assets/img/audio/heart-icon.svg';
       }
     });
-  });
+  }); // Volume ON / OFF btns
+
   volume_button.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       var id = btn.id;
@@ -39899,6 +39904,27 @@ window.onload = function () {
         btn.dataset.mute = '';
         btn.firstElementChild.src = '../assets/img/audio/audio-icon.svg';
       }
+    });
+  }); // Run Watch Seekbar function each second 
+
+  setInterval(function () {
+    watchSeekbar();
+  }, 1000);
+
+  function watchSeekbar() {
+    seekbar.forEach(function (seekbar) {
+      var id = seekbar.id;
+      seekbar.value = Math.round(sample[id].currentTime);
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
+    });
+  } // Watching seekbars changes...
+
+
+  seekbar.forEach(function (seekbar) {
+    seekbar.addEventListener('change', function (e) {
+      var id = seekbar.id;
+      sample[id].currentTime = e.target.value;
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
     });
   });
 };
