@@ -546,7 +546,7 @@ footer{
         .copy{
 
             span{
-                font-size: 12px;
+                font-size: 10px;
             }
         }
 
@@ -555,9 +555,21 @@ footer{
 
 @media screen and (max-width: 730px){
 
-    .item{
-        margin-right: 140px!important;
-        margin-left: 100px!important;
+    .owl-item,
+    .item,
+    .player-container,
+    .category-box{
+        width: 282px!important;
+        // margin: 0 15px;
+    }
+
+}
+
+@media screen and (max-width: 640px){
+
+    .player-container,
+    .category-box{
+        // margin: 0 40px;
     }
 
 }
@@ -575,7 +587,6 @@ footer{
 
     .owl-item{
         max-width: 320px!important;
-        margin: 0 5px;
     }
 
 }

@@ -30,7 +30,7 @@ body{
          z-index: 100;
     
         img{
-            width: 140px;
+            width: 200px;
         }
 
     }
@@ -45,11 +45,11 @@ body{
 
         li:not(:last-child){
 
-            a.nav-link,
-            span{
+            a.nav-link{
                 margin-right: 60px;
                 text-decoration: none;
                 color: white;
+                text-align: center;
             }
             
         }
@@ -66,6 +66,7 @@ body{
 
    #cart-icon{
            width: 40px;
+           margin-left: 20px;
    }
 
    .menu-icon{
@@ -122,7 +123,7 @@ body{
 
 }
 
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1090px){
     
     nav.nav-app{
         padding: 20px 30px!important;
@@ -130,7 +131,7 @@ body{
 
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1070px){
     
     nav.nav-app{
         padding: 20px 30px!important;
@@ -157,6 +158,10 @@ body{
 
         }
     }
+    
+    .username-p{
+        margin-right: 0px!important;
+    }
 
     .register-button{
         background-color: #E51E27;
@@ -175,6 +180,14 @@ body{
 
     .menu-icon{
         display: block!important;
+    }
+
+}
+
+@media screen and (max-width: 460px){
+
+    #logo{
+        width: 160px!important;
     }
 
 }
