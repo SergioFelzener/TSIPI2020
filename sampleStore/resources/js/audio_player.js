@@ -10,6 +10,26 @@ const sample_total_duration = document.querySelectorAll('.total-duration')
 
 const sample = document.querySelectorAll('.sample-audio')
 
+sample.forEach(audio => {
+    audio.ontimeupdate = () => {
+        
+        let id = audio.id
+        seekbar[id].value = audio.currentTime
+        sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0)
+
+    }
+})
+
+seekbar.forEach(seekbar => {
+
+ seekbar.onchange = (e) => {
+    let id = seekbar.id
+    sample[id].currentTime = e.target.value
+    sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0)
+    }     
+
+})
+
 // Configuring Samples Players
 for(let i = 0; i < sample.length; i++){
     // Setting unique IDs
@@ -19,16 +39,16 @@ for(let i = 0; i < sample.length; i++){
     sample_total_duration[i].id = i
     volume_button[i].id = i
     play_pause_button[i].id = i
-    
-    // Looping all samples
-    sample[i].loop = true
 
     // Set sample duration 
     seekbar[i].max = sample[i].duration
-    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration).toString()
+    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration)
 
     // Set sample current time
-    sample_current_duration[i].innerHTML = "0:0" + Math.floor(sample[i].duration).toString()
+    sample_current_duration[i].innerHTML = "0:0"
+
+    // Set seekbar position
+    seekbar[i].value = 0
 
 }
 
@@ -95,27 +115,5 @@ volume_button.forEach(btn => {
 
 })
 
-// Run Watch Seekbar function each second 
-setInterval(function() {
-    watchSeekbar()
-}, 1000)
-
-function watchSeekbar(){
-    seekbar.forEach(seekbar => {
-        let id = seekbar.id
-        seekbar.value = Math.round(sample[id].currentTime)
-        sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0)
-    })
-}
-
-// Watching seekbars changes...
-seekbar.forEach(seekbar => {
-    seekbar.addEventListener('change', (e) => {
-        let id = seekbar.id
-        sample[id].currentTime = e.target.value
-        sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0)
-        
-    })
-})
 
 }

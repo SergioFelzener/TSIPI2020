@@ -56,7 +56,7 @@
                                     </div>
                     
                                     <div class="player-seekbar">
-                                        <input class="seekbar" type="range" min="0" max="" step="1">
+                                        <input class="seekbar" type="range" min="0" max="0" step="1">
                                     </div>
                     
                                     <div class="player-total-duration">

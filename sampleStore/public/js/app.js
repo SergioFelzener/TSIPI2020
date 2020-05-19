@@ -39844,7 +39844,21 @@ window.onload = function () {
   var sample_current_duration = document.querySelectorAll('.current-duration');
   var seekbar = document.querySelectorAll('.seekbar');
   var sample_total_duration = document.querySelectorAll('.total-duration');
-  var sample = document.querySelectorAll('.sample-audio'); // Configuring Samples Players
+  var sample = document.querySelectorAll('.sample-audio');
+  sample.forEach(function (audio) {
+    audio.ontimeupdate = function () {
+      var id = audio.id;
+      seekbar[id].value = audio.currentTime;
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
+    };
+  });
+  seekbar.forEach(function (seekbar) {
+    seekbar.onchange = function (e) {
+      var id = seekbar.id;
+      sample[id].currentTime = e.target.value;
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
+    };
+  }); // Configuring Samples Players
 
   for (var i = 0; i < sample.length; i++) {
     // Setting unique IDs
@@ -39853,14 +39867,14 @@ window.onload = function () {
     sample_current_duration[i].id = i;
     sample_total_duration[i].id = i;
     volume_button[i].id = i;
-    play_pause_button[i].id = i; // Looping all samples
-
-    sample[i].loop = true; // Set sample duration 
+    play_pause_button[i].id = i; // Set sample duration 
 
     seekbar[i].max = sample[i].duration;
-    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration).toString(); // Set sample current time
+    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration); // Set sample current time
 
-    sample_current_duration[i].innerHTML = "0:0" + Math.floor(sample[i].duration).toString();
+    sample_current_duration[i].innerHTML = "0:0"; // Set seekbar position
+
+    seekbar[i].value = 0;
   } // Play / Pause btns
 
 
@@ -39904,27 +39918,6 @@ window.onload = function () {
         btn.dataset.mute = '';
         btn.firstElementChild.src = '../assets/img/audio/audio-icon.svg';
       }
-    });
-  }); // Run Watch Seekbar function each second 
-
-  setInterval(function () {
-    watchSeekbar();
-  }, 1000);
-
-  function watchSeekbar() {
-    seekbar.forEach(function (seekbar) {
-      var id = seekbar.id;
-      seekbar.value = Math.round(sample[id].currentTime);
-      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
-    });
-  } // Watching seekbars changes...
-
-
-  seekbar.forEach(function (seekbar) {
-    seekbar.addEventListener('change', function (e) {
-      var id = seekbar.id;
-      sample[id].currentTime = e.target.value;
-      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
     });
   });
 };
