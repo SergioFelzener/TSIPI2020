@@ -39855,12 +39855,12 @@ window.onload = function () {
     volume_button[i].id = i;
     play_pause_button[i].id = i; // Looping all samples
 
-    sample[i].loop = true; // Set sample duration
+    sample[i].loop = true; // Set sample duration 
 
-    seekbar[i].max = sample[i].duration.toFixed(0);
-    sample_total_duration[i].innerHTML = "0:" + sample[i].duration.toFixed(0); // Set sample current time
+    seekbar[i].max = sample[i].duration;
+    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration).toString(); // Set sample current time
 
-    sample_current_duration[i].innerHTML = "0:0" + sample[i].currentTime.toFixed(0);
+    sample_current_duration[i].innerHTML = "0:0" + Math.floor(sample[i].duration).toString();
   } // Play / Pause btns
 
 

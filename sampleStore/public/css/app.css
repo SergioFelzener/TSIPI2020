@@ -11291,7 +11291,7 @@ body .card-body {
 }
 
 .player-container .player-cover-image img {
-  width: auto;
+  width: 100%;
   height: 100%;
 }
 
