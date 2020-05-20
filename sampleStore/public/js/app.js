@@ -39841,25 +39841,42 @@ window.onload = function () {
   var play_pause_button = document.querySelectorAll('.play-pause-button');
   var favorite_button = document.querySelectorAll('.favorite-button');
   var volume_button = document.querySelectorAll('.volume-button');
-  var sample_current_duration = document.querySelector('.current-duration');
-  var seekbar = document.querySelector('.seekbar');
-  var sample_total_duration = document.querySelector('.total-duration');
+  var sample_current_duration = document.querySelectorAll('.current-duration');
+  var seekbar = document.querySelectorAll('.seekbar');
+  var sample_total_duration = document.querySelectorAll('.total-duration');
   var sample = document.querySelectorAll('.sample-audio');
   sample.forEach(function (audio) {
-    audio.loop = true;
+    audio.ontimeupdate = function () {
+      var id = audio.id;
+      seekbar[id].value = audio.currentTime;
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
+    };
   });
+  seekbar.forEach(function (seekbar) {
+    seekbar.onchange = function (e) {
+      var id = seekbar.id;
+      sample[id].currentTime = e.target.value;
+      sample_current_duration[id].innerHTML = "0:" + sample[id].currentTime.toFixed(0);
+    };
+  }); // Configuring Samples Players
 
   for (var i = 0; i < sample.length; i++) {
+    // Setting unique IDs
     sample[i].id = i;
-  }
+    seekbar[i].id = i;
+    sample_current_duration[i].id = i;
+    sample_total_duration[i].id = i;
+    volume_button[i].id = i;
+    play_pause_button[i].id = i; // Set sample duration 
 
-  for (var _i = 0; _i < volume_button.length; _i++) {
-    volume_button[_i].id = _i;
-  }
+    seekbar[i].max = sample[i].duration;
+    sample_total_duration[i].innerHTML = "0:" + Math.floor(sample[i].duration); // Set sample current time
 
-  for (var _i2 = 0; _i2 < play_pause_button.length; _i2++) {
-    play_pause_button[_i2].id = _i2;
-  }
+    sample_current_duration[i].innerHTML = "0:0"; // Set seekbar position
+
+    seekbar[i].value = 0;
+  } // Play / Pause btns
+
 
   play_pause_button.forEach(function (btn) {
     var id = btn.id;
@@ -39874,7 +39891,8 @@ window.onload = function () {
         sample[id].pause();
       }
     });
-  });
+  }); // Favorite btns
+
   favorite_button.forEach(function (btn) {
     btn.addEventListener('click', function () {
       if (btn.id != 'favorite') {
@@ -39885,7 +39903,8 @@ window.onload = function () {
         btn.firstElementChild.src = '../assets/img/audio/heart-icon.svg';
       }
     });
-  });
+  }); // Volume ON / OFF btns
+
   volume_button.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       var id = btn.id;
