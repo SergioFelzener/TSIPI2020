@@ -78,7 +78,7 @@
 </div>
 
 @else
-<div class="container">
+<div class="container" style="height: 500px;">
     <div class="alert alert-danger">CARRINHO VAZIO</div>
 </div>
 @endif

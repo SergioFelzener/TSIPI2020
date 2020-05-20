@@ -1,6 +1,5 @@
 body{
     width: 100%;
-    // height: 100vh;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -355,6 +354,11 @@ footer{
     
         span{
             font-size: 14px;
+        }
+
+        a{
+            color: white;
+            font-weight: bold;
         }
     }
 }

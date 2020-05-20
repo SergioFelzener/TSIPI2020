@@ -11557,6 +11557,11 @@ footer .copy span {
   font-size: 14px;
 }
 
+footer .copy a {
+  color: white;
+  font-weight: bold;
+}
+
 .category-box {
   position: relative;
   width: 320px;
@@ -11841,7 +11846,7 @@ footer .copy span {
 }
 
 .sign-container .sign .side img {
-  max-width: 60px;
+  max-width: 220px;
 }
 
 .sign-container .sign .inputs {
@@ -12266,6 +12271,10 @@ footer .copy span {
   color: white;
   text-align: center !important;
   margin-right: 60px;
+}
+
+.username-span {
+  color: white;
 }
 
 .img-store {
