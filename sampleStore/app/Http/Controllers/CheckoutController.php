@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\store;
 
-
 class CheckoutController extends Controller
 {
     public function index(){
@@ -40,7 +39,7 @@ class CheckoutController extends Controller
         try{
             $dataPost = $request->all();
 
-            $reference = 'aqui cod de referencia : X75';
+            $reference = uniqid(rand());
             //Instantiate a new direct payment request, using Credit Card
             $creditCard = new \PagSeguro\Domains\Requests\DirectPayment\CreditCard();
 
@@ -48,7 +47,7 @@ class CheckoutController extends Controller
 
             // Set a reference code for this payment request. It is useful to identify this payment
             // in future notifications.
-            $creditCard->setReference($reference);
+            $creditCard->setReference(base64_encode($reference));
 
             // Set the currency
             $creditCard->setCurrency("BRL");
@@ -147,7 +146,7 @@ class CheckoutController extends Controller
                 \PagSeguro\Configuration\Configure::getAccountCredentials()
             );
 
-            // var_dump($result);
+
             $userOrder = [
                 'reference'=> $reference,
                 'pagseguro_code'=> $result->getCode(),
