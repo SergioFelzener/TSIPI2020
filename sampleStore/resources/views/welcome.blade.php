@@ -40,49 +40,49 @@
                                     </a>
                                 </div>
                             </div>
-                    
+
                             <div class="player-description">
                                 <p class="sample-name">{{$produto->name}}</p>
                                 <p class="sample-category">{{ $produto->description }}</p>
                             </div>
-                    
+
                             <div class="player-controls">
-                                
+
                                 <div class="seekbar-wrapper">
                                     <audio src="{{ asset('storage/' . $produto->audio->audio)}}" class="sample-audio"></audio>
-                    
+
                                     <div class="player-current-duration">
                                         <span class="current-duration">00:00</span>
                                     </div>
-                    
+
                                     <div class="player-seekbar">
                                         <input class="seekbar" type="range" min="0" max="" step="1">
                                     </div>
-                    
+
                                     <div class="player-total-duration">
                                         <span class="total-duration">00:00</span>
                                     </div>
                                 </div>
-                    
+
                                 <div class="buttons-wrapper">
                                     <div class="favorite-button">
                                         <img class="favorite-button-icon" src="./assets/img/audio/heart-icon.svg" alt="Favorite icon">
                                     </div>
-                                    
+
                                     <div data-pause="paused" class="play-pause-button">
                                         <img class="play-pause-button-icon" src="./assets/img/audio/play-icon.svg" alt="Play/Pause icon">
                                     </div>
-                                    
+
                                     <div class="volume-button" data-mute="">
                                         <img class="volume-button-icon" src="./assets/img/audio/audio-icon.svg" alt="Volume icon">
                                     </div>
-                                    
+
                                 </div>
-                    
+
                     </div>
-                    
+
                 </div>
-        </div>   
+        </div>
         @endforeach
     </div>
 
@@ -108,24 +108,14 @@
 
                 <a class="ver-tudo" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">Ver tudo</a>
             </div>
-               
-        </div>   
+
+        </div>
         @endforeach
     </div>
 
 </div>
 
-<footer>
-        
-        <div class="logo-box">
-            <img id="logo-footer" src="./assets/img/Logo01_White.svg" alt="Logo">
-        </div>
 
-        <div class="copy">
-            <span>SampleStore © Todos os direitos reservados - 2020</span>
-        </div>
-
-    </footer>
 
 <!-- Vini Layout Home -->
 
@@ -145,7 +135,7 @@
                     <h2 class="card-title">{{$produto->name}}</h2>
                     <p class="card-text">
                         {{ $produto->description }}
-                        
+
                     </p>
                     <h3>
                         R$ : {{ number_format($produto->price, '2', ',', '.')}}

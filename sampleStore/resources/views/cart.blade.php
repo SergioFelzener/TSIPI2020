@@ -7,32 +7,35 @@
 </div>
 
 @if($cart)
-<div class="cart-container">  
+<div class="cart-container">
 
     @php $total = 0; @endphp
     @foreach($cart as $c)
     <div class="cart-item">
         <div class="cart-item-image">
-            
+
         </div>
 
         <div class="cart-item-details">
             <p>{{$c['name']}}</p>
 
-            <p>Category</p>
+            <p>sample</p>
 
-            <p>R$ {{$c['price'], 2, ',' , '.'}}</p>
+            <p>R${{$c['price'], 2, ',' , '.'}}</p>
 
-            <p>{{$c['amount']}}</p>
+            <p>Qnt:{{$c['amount']}}</p>
             @php
 
             $subtotal = $c['price'] * $c['amount'];
             $total += $subtotal;
 
+            $totalGeral = number_format($total, 2, ',', '.' );
+            $subtotalGeral = number_format($subtotal, 2, ',', '.' );
+
             @endphp
 
-            <p>{{($subtotal), 2, ',' , '.'}}</p>
-            
+            <p>R${{($subtotalGeral), 2, ',' , '.'}}</p>
+
         </div>
 
         <div class="cart-delete">
@@ -46,16 +49,16 @@
 
 </div>
 
-<div class="cart-container">  
+<div class="cart-container">
 
     <div class="cart-item-total">
         <div class="cart-item-image">
-            <p>Total</p> 
+            <p>Total</p>
         </div>
 
         <div class="cart-item-details">
-            
-            <p>R$ {{$total, 2, ',' , '.'}}</p>
+
+            <p>R$ {{$totalGeral, 2, ',' , '.'}}</p>
 
         </div>
 
@@ -83,7 +86,7 @@
 
 
 <!-- <div class="row">
-        
+
     <div class="col-12">
         @if($cart)
         <table class="table table-striped">
