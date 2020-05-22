@@ -27,7 +27,7 @@ class CheckoutController extends Controller
        $cartItens = array_sum($cartItens);
 
 
-       var_dump(session()->get('pagseguro_session_code'));
+       //var_dump(session()->get('pagseguro_session_code'));
 
     //    session()->forget('pagseguro_session_code');
 

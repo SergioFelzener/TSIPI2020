@@ -130,7 +130,8 @@
                     <img id="cart-icon" src="../assets/img/cart-icon.svg" alt="Ìcone de carrinho de compras">
                     @if(session()->has('cart'))
                     <span class="badge badge-danger"> {{ count(session()->get('cart')) }}</span>
-                    <span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>
+                    <!-- Abaixo a contagem soma todos mesmo se tiver vario produtos iguais:-->
+                    <!--<span class="badge badge-danger"> {{ array_sum(array_column(session()->get('cart'), 'amount')) }}</span>-->
                     @endif
                 </a>
             </div>

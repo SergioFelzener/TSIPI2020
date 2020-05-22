@@ -16,7 +16,7 @@
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapseOne">
-                                Pedido n!ˆ& : {{ $order->reference }}
+                                Pedido n˚:{{ $order->reference }}
                                 </button>
                             </h5>
                         </div>
