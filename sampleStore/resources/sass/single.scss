@@ -1,0 +1,55 @@
+.sample-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-flow: column;
+
+    .sample-details{
+        margin-top: 25px;
+        text-align: center;
+
+        h2{
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input{
+            display: inline-block;
+        }
+
+        .double-buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button,
+            a{
+                margin: 10px;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-weight: 600;
+                color: white;
+                transition: 150ms ease-in-out;
+                border: none;
+                background-color: #272727;
+                font-size: 16px;
+
+                &:hover{
+                    background-color: #3b3b3b;
+                }
+            }
+
+            .button-cancel{
+                background-color: rgb(247, 41, 52);
+
+                &:hover{
+                    background-color: rgb(253, 75, 84);
+                }
+            }
+
+
+        }
+    }
+}

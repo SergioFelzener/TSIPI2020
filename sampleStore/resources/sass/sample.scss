@@ -1,0 +1,26 @@
+.sample-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding: 50px 50px 50px 50px;
+
+    .all-samples-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+}
+
+.samples-title{
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: $secondary-color;
+}

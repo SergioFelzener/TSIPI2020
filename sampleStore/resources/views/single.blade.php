@@ -2,76 +2,99 @@
 
 @section('content')
 
-<div class="row">
-    <div class="col-6">
-        @if($produto->fotos->count())
-        <img src="{{asset('storage/' . $produto->fotos->first()->image)}}" alt="" class="card-img-top">
-        <div class="row" style="margin-top: 20px;">
+        <div class="sample-item">
+                    <div class="player-container">
 
-            @foreach($produto->fotos as $foto)
-
-                <div class="col-4">
-
-                    <img src="{{asset('storage/' . $foto->image)}}" alt="" class="img-fluid">
-
-                </div>
-
-            @endforeach
-        </div>
-        @else
-            <img src="{{asset('assets/img/no-photo.jpg')}}"  alt="" class="card-img-top">
-        @endif
-    </div>
-        <div class="col-6">
-            <div class="col-md-12">
-                <h2>{{$produto->name}}</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <audio controls>
-                            <source src="{{ asset('storage/' . $produto->audio->audio)}}" type="audio/mpeg">
-                        </audio>
-                        <p>AQUI O AUDIO</p>
+                        <div class="player-cover-image">
+                            @if($produto->fotos->count())
+                                <img class="sample-cover-image" src="{{asset('storage/' . $produto->fotos->first()->image)}}" alt="Sample image">
+                            @else
+                                <img src="{{asset('assets/img/no-photo.jpg')}}"  alt="" class="card-img-top">
+                            @endif
+                        </div>
+                    
+                            <div class="player-description">
+                                <p class="sample-name">{{$produto->name}}</p>
+                                <p class="sample-category">{{ $produto->description }}</p>
+                            </div>
+                    
+                            <div class="player-controls">
+                                
+                                <div class="seekbar-wrapper">
+                                    <audio src="{{ asset('storage/' . $produto->audio->audio)}}" class="sample-audio"></audio>
+                    
+                                    <div class="player-current-duration">
+                                        <span class="current-duration">00:00</span>
+                                    </div>
+                    
+                                    <div class="player-seekbar">
+                                        <input class="seekbar" type="range" min="0" max="" step="1">
+                                    </div>
+                    
+                                    <div class="player-total-duration">
+                                        <span class="total-duration">00:00</span>
+                                    </div>
+                                </div>
+                    
+                                <div class="buttons-wrapper">
+                                    <div class="favorite-button">
+                                        <img class="favorite-button-icon" src="../assets/img/audio/heart-icon.svg" alt="Favorite icon">
+                                    </div>
+                                    
+                                    <div id="paused" class="play-pause-button">
+                                        <img class="play-pause-button-icon" src="../assets/img/audio/play-icon.svg" alt="Play/Pause icon">
+                                    </div>
+                                    
+                                    <div class="volume-button">
+                                        <img class="volume-button-icon" src="../assets/img/audio/audio-icon.svg" alt="Volume icon">
+                                    </div>
+                                    
+                                </div>
+                    
                     </div>
+                    
                 </div>
-                <p>
-                    {{ $produto->description }}
-                </p>
-                <h3>
+
+            <div class="sample-details">
+                <h2>
                     R$ : {{ number_format($produto->price, '2', ',', '.')}}
-                </h3>
-                <span>
+                </h2>
+
+                <!-- <span>
                     Loja : {{ $produto->store->name }}
-                </span>
-            </div>
+                </span> -->
 
-            <div class="produto-add col-md-12">
-                <hr>
-
-            <form action="{{route('cart.add')}}" method="POST">
-                @csrf
-                <input type="hidden" name="produto[name]" value="{{$produto->name}}">
+                <form action="{{route('cart.add')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="produto[name]" value="{{$produto->name}}">
                     <input type="hidden" name="produto[price]" value="{{$produto->price}}">
                     <input type="hidden" name="produto[slug]" value="{{$produto->slug}}">
                     <div class="form-group">
                         <label>Quantidade</label>
                         <input type="number" name="produto[amount]" class="form-control col-md-2" value="1">
                     </div>
-                    <button class="btn btn-sm btn-danger">COMPRAR</button>
+
+                    <div class="double-buttons">
+                        <a href="{{route('home')}}" class="button-cancel">Cancelar</a href="">
+                        <button class="">Comprar</button>
+                    </div>
+                    
                 </form>
             </div>
 
 
         </div>
+        </div>   
+
+
 
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-12">
         <hr>
         {{ $produto->body }}
     </div>
-</div>
-
-
+</div> -->
 
 @endsection

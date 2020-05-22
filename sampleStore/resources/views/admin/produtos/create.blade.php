@@ -72,7 +72,7 @@
 
         <div class="form-group">
             <label for="">Audio do Produto</label>
-            <input type="file" name="audio" class="form-control @error('audio.*') is-invalid @enderror">
+            <input type="file" name="audio" class="form-control @error('audio.*') is-invalid @enderror" required>
             @error('audio')
             <div class="invalid-feedback">
                 {{ $message }}

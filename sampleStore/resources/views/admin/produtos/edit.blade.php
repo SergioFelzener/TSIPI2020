@@ -73,10 +73,10 @@
 
         <div class="form-group">
             <label>Slug</label>
-            <input type="text" name="slug" class="form-control" value="{{$produtos->slug}}">
+            <input type="text" name="slug" class="form-control" value="{{$produtos->slug}}" readonly>
         </div>
         <div>
-            <button type="submit" class=" btn btn-lg btn-primary">Atualilzar Produto</button>
+            <button type="submit" class=" btn btn-lg btn-success">Atualilzar Produto</button>
         </div>
     </form>
 

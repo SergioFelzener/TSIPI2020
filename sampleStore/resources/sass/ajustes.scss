@@ -1,0 +1,35 @@
+.container{
+    padding: 20px!important;
+}
+
+@media screen and (max-width: 900px){
+
+    .container{
+        padding: 10px!important;
+    }
+
+}
+
+.btn{
+    margin-bottom: 5px!important;
+    margin-right: 5px!important;
+}
+
+.username-p{
+    color: white;
+    text-align: center!important;
+    margin-right: 60px;
+}
+
+.username-span{
+    color: white;
+}
+
+.img-store{
+    margin-bottom: 10px;
+    max-width: 350px;
+}
+
+#logo-footer{
+    width: 280px;
+}

@@ -7,10 +7,75 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>SampleStore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+    </style>
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-        <a class="navbar-brand" href="{{route('home')}}">Marketplace SS</a>
+
+<!-- Nav Vini -->
+<div class="nav-wrapper">
+            <nav class="nav-app">
+            <div class="logo">
+                <a href="{{route('home')}}"><img id="logo" src="../../assets/img/Logo01_White.svg" alt="Logo SampleStore"></a>
+            </div>
+
+            @auth
+            <ul id="navigation-links">
+
+                <li class=" @if(request()->is('admin/orders*')) active @endif">
+                    <a class="nav-link" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
+                </li>
+
+                <li class=" @if(request()->is('admin/stores*')) active @endif">
+                    <a class="nav-link" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
+                    <a class="nav-link" href="{{ route('admin.produtos.index') }}">Produtos</a>
+                </li>
+
+                <li class=" @if(request()->is('admin/categorias*')) active @endif">
+                    <a class="nav-link" href="{{ route('admin.categorias.index') }}">Categorias</a>
+                </li>
+
+                <li class="username-span">
+                    <span class="">{{ auth()->user()->name }}</span>
+                </li>
+
+                <li class="">
+                    <a href="{{ route('admin.notifications.index') }}" class="nav-link">
+                        <span class="badge badge-danger">{{auth()->user()->unreadNotifications->count()}}</span>
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="login-button" href="#" onclick="event.preventDefault();document.querySelector('form.logout').submit(); ">Sair</a>
+                    <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                        @csrf
+                    </form>
+                </li>
+                        
+   
+            </ul>
+            @endauth
+
+            <div class="menu-icon">
+                <img src="../assets/img/menu-icon.svg" alt="Ìcone do menu">
+            </div>
+
+        </nav>
+    </div>
+
+
+
+<!-- NAV Original -->
+    <!-- <nav class="navbar nav-sample">
+        <a class="navbar-brand" href="{{route('home')}}">
+            <img class="sample-logo" src="../assets/img/SampleStoreLogo.png" alt="Sample Store Logo">
+        </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,9 +86,11 @@
                 <li class="nav-item @if(request()->is('admin/orders*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.orders.my') }}">Meus Pedidos</a>
                 </li>
+
                 <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.stores.index') }}">Loja <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item @if(request()->is('admin/produtos*')) active @endif">
                     <a class="nav-link" href="{{ route('admin.produtos.index') }}">Produtos</a>
                 </li>
@@ -54,7 +121,8 @@
                 </div>
                 @endauth
         </div>
-    </nav>
+    </nav> -->
+
     <div class="container">
 
         @include('flash::message')
