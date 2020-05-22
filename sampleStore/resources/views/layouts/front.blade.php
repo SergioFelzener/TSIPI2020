@@ -161,7 +161,7 @@
         </div>
 
         <div class="copy">
-            <span>SampleStore © Todos os direitos reservados - 2020 - Developers (GitHub **Sergio Felzener && Vinicius Savegnago**)</span>
+            <span>SampleStore © Todos os direitos reservados - 2020 - Developers - <a href="https://github.com/SergioFelzener" target="_blank">Sérgio</a> & <a href="https://github.com/savegdesigner" target="_blank">Vinicius</a></span>
         </div>
 
     </footer>

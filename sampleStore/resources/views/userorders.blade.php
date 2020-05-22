@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" style="min-height: 500px;">
 
     <div class="row">
         <div class="col-12">

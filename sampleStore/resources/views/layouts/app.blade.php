@@ -18,7 +18,7 @@
 <div class="nav-wrapper">
             <nav class="nav-app">
             <div class="logo">
-                <a href="{{route('home')}}"><img id="logo" src="../../../assets/img/SampleStoreLogo.png" alt="Logo SampleStore"></a>
+                <a href="{{route('home')}}"><img id="logo" src="../../assets/img/Logo01_White.svg" alt="Logo SampleStore"></a>
             </div>
 
             @auth
