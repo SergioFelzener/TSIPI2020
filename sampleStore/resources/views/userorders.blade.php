@@ -29,9 +29,9 @@
                                     @foreach($itens as $item)
 
                                     <li>{{$item['name']}} R$ {{number_format($item['price'],2, ',', '.')}} Total R$ {{number_format($item['price'] * $item['amount'],2, ',', '.')}}</li>
-
-
                                     @endforeach
+
+                                    <li class="mt-2"><a href="">Download Sample Aqui</a></li>
                                 </ul>
 
                             </div>

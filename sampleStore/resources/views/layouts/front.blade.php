@@ -110,7 +110,7 @@
                 </li>
 
                 <li>
-                    <p class="username-p">{{ auth()->user()->name }}</p>
+                <a class="nav-link" href="{{route('admin.stores.index')}}">{{ auth()->user()->name }}</a>
                 </li>
                 @endauth
 

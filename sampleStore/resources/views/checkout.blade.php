@@ -9,7 +9,7 @@
 
 
     <div class="container container-checkout">
-        <h2>Pagamento</h2>
+        <h2 class="title">Pagamento</h2>
         <hr>
             <div class="col-md-6">
                 <form class="form-checkout" action="" method="POST">

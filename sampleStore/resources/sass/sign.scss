@@ -1,4 +1,4 @@
-.sign-container{
+.sign-container {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,8 +8,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat';
-
-    .sign{
+    .sign {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,43 +19,36 @@
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0px 40px 50px #30141436;
-
-        .side{
+        .side {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50%;
             height: 100%;
             background-color: $primary-color;
-
-            img{
-                max-width: 220px;
+            img {
+                max-width: 320px;
             }
         }
-    
-        .inputs{
+        .inputs {
             width: 50%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-flow: column;
-            
-            h1{
+            h1 {
                 color: white;
                 font-size: 24px;
                 margin-bottom: 30px;
-
             }
-
-            .input-field{
+            .input-field {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin: 15px 0;
-
-                input{
+                input {
                     width: 50%;
                     background: none;
                     border: none;
@@ -67,42 +59,29 @@
                     border-radius: 0!important;
                 }
             }
-
-            .link-field{
+            .link-field {
                 margin: 50px 0 0 0;
                 color: white;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-flow: column;
-                
-                span{
+                span {
                     margin: 0 0 5px 0;
-                    
                 }
-
-                a{
+                a {
                     text-decoration: none;
                     color: white;
                     font-size: 14px;
                     cursor: pointer;
                     font-weight: 600;
                 }
-
-
             }
-
-
         }
-
     }
-
-
-
 }
 
 // Buttons
-
 .btn-primary {
     background: none;
     border: none;
@@ -117,8 +96,7 @@
     margin: 10px 0px;
     transition: 160ms ease-in-out;
     font-weight: 600;
-
-    &:hover{
+    &:hover {
         background-color: white;
         color: $primary-color;
     }
@@ -139,52 +117,42 @@
     margin: 10px 0px;
     transition: 160ms ease-in-out;
     font-weight: 600;
-
-    &:hover{
+    &:hover {
         background-color: rgb(255, 73, 82);
     }
 }
 
-.btn-checkout{
+.btn-checkout {
     background-color: $secondary-color;
-
-    &:hover{
+    &:hover {
         background-color: #3a3a3a;
     }
 }
 
 // Media
-
-@media screen and (max-width: 800px){
-
-    .sign-container{
+@media screen and (max-width: 800px) {
+    .sign-container {
         background-color: $secondary-color;
     }
-
-    .sign-container .sign{
+    .sign-container .sign {
         box-shadow: none;
     }
-
-    .sign-container .sign{
+    .sign-container .sign {
         width: 100%;
     }
-
-    .sign-container .sign .side{
+    .sign-container .sign .side {
         display: none;
     }
-
-    .sign-container .sign .inputs{
+    .sign-container .sign .inputs {
         width: 100%;
     }
-
-    .inputs .input-field input{
+    .inputs .input-field input {
         width: 80%!important;
     }
-
 }
 
-@media screen and (min-width: 576px){
-    .container{
+@media screen and (min-width: 576px) {
+    .container {
         // width: 100%!important;
         // max-width: none!important;
         // padding: 0!important;

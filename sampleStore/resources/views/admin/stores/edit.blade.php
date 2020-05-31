@@ -23,7 +23,7 @@
         <p>
             <img class="img-store" src="{{asset('storage/'. $store->logo)}}" alt="">
         </p>
-        <label for="">Fotos do Produto</label>
+        <label for="">Logotipo da Loja</label>
         <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" multiple>
         @error('logo')
         <div class="invalid-feedback">
