@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="samples-title">
-    <h1>Meu carrinho</h1>
+    <h1 class="title">Meu carrinho</h1>
 </div>
 
 @if($cart)

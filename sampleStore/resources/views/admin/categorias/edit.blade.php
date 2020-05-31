@@ -2,12 +2,12 @@
 
 
 @section('content')
-    <h1>Atualizar Categoria</h1>
+    <h1 class="mt-2">Atualizar Categoria</h1>
     <form action="{{route('admin.categorias.update', ['categoria' => $categoria->id])}}" method="post">
         @csrf
         @method("PUT")
 
-        <div class="form-group">
+        <div class="form-group mt-5">
             <label>Nome</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$categoria->name}}">
 
@@ -20,7 +20,14 @@
 
         <div class="form-group">
             <label>Descrição</label>
-            <input type="text" name="description" class="form-control" value="{{$categoria->description}}">
+            <input type="text" name="descricao" class="form-control" value="{{$categoria->descricao}}">
+        </div>
+        <div class="form-group">
+            <p>
+                <img class="img-store" src="{{asset('storage/'. $categoria->img)}}" alt="">
+            </p>
+            <label for="img">Foto da Categoria</label>
+
         </div>
 
         <div class="form-group">

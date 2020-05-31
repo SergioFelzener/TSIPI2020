@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     @empty
-                        <div class="alert alert-warning">Nenhum Pedido Recebido!</div>
+                        <div class="alert alert-warning">Você ainda não tem pedidos !!</div>
                 @endforelse
             </div>
             <hr>

@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\categoria;
 use App\Http\Requests\categoriarequest;
+use App\Traits\UploadTrait;
 
 class categoriacontroller extends Controller
 {
 	/**
 	 * @var categoria
 	 */
+
+    use UploadTrait;
+
 	private $categoria;
 
 	public function __construct(categoria $categoria)
@@ -50,7 +54,11 @@ class categoriacontroller extends Controller
 	 */
     public function store(categoriarequest $request)
     {
-	    $data = $request->all();
+        $data = $request->all();
+
+        if($request->hasFile('img')){
+            $data['img'] = $this->imageUpload($request->file('img'));
+        }
 
 	    $categoria = $this->categoria->create($data);
 
@@ -92,9 +100,19 @@ class categoriacontroller extends Controller
 	 */
     public function update(categoriarequest $request, $categoria)
     {
-	    $data = $request->all();
+        $data = $request->all();
 
-	    $categoria = $this->categoria->find($categoria);
+        $categoria = $this->categoria->find($categoria);
+
+        if($request->hasFile('img')){
+            if(Storage::disk('public')->exists($categoria->img)){
+                Storage::disk('public')->delete($categoria->img);
+            }
+
+            $data['img'] = $this->imageUpload($request->file('img'));
+
+        }
+
 	    $categoria->update($data);
 
 	    flash('Categoria Atualizada com Sucesso!')->success();
