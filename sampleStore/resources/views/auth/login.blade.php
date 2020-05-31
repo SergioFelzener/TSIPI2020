@@ -8,7 +8,7 @@
 
     <div class="side">
 
-        <img src="../assets/img/Logo01_White.svg" alt="Logo simpler">
+        <img src="../assets/img/03A.svg" alt="Logo simpler">
 
     </div>
 

@@ -42,8 +42,8 @@
                             </div>
 
                             <div class="player-description">
-                                <p class="sample-name">{{$produto->name}}</p>
-                                <p class="sample-category">{{ $produto->description }}</p>
+                                <p class="titleCategoria">{{$produto->name}}</p>
+                                <p class="sample-category mt-3">{{ $produto->description }}</p>
                             </div>
 
                             <div class="player-controls">
@@ -98,11 +98,11 @@
 
             <div class="category-box">
                 <div class="category-cover-image">
-                    <img src="" alt="">
+                    <img src="{{asset('storage/' . $categoria->img)}}" alt="">
                 </div>
 
                 <div class="category-description">
-                    <p class="category-name">{{$categoria->name}}</p>
+                    <p class="titleCategoria">{{$categoria->name}}</p>
                     <p class="category-description-text">{{ $categoria->description }}</p>
                 </div>
 

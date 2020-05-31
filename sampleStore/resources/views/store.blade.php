@@ -26,7 +26,7 @@
 
             @forelse($store->produtos as $key => $produto)
                 <div class="col-md-4">
-                    <div class="card" style="width: 100%%;">
+                    <div class="card" style="width: 100%;">
                         @if($produto->fotos->count())
                             <img src="{{asset('storage/' . $produto->fotos->first()->image)}}" alt="" class="card-img-top">
                         @else
