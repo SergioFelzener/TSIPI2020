@@ -18,7 +18,7 @@ class CreateProdutoAudioTable extends Migration
             $table->unsignedBigInteger('produto_id');
             $table->string('audio');
             $table->timestamps();
-            $table->foreign('produto_id')->references('id')->on('produtos');
+            $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade');
         });
     }
 

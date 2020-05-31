@@ -10,7 +10,7 @@ class categoria extends Model{
 
     use HasSlug;
 
-    protected $fillable = ['name','categoria', 'slug'];
+    protected $fillable = ['name','descricao', 'slug', 'img'];
 
     /**
      * Get the options for generating the slug.
