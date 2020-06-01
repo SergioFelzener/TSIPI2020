@@ -39870,7 +39870,9 @@ window.onload = function () {
     play_pause_button[i].id = i; // Set sample duration
 
     seekbar[i].max = sample[i].duration;
-    sample_total_duration[i].innerHTML = "0:0" + Math.floor(sample[i].duration); // Set sample current time
+    console.log(sample[i].duration);
+    sample_total_duration[i].innerHTML = "0:05"; //+ Math.floor(sample[i].duration)
+    // Set sample current time
 
     sample_current_duration[i].innerHTML = "0:00"; // Set seekbar position
 

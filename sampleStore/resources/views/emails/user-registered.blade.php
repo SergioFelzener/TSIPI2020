@@ -1,3 +1,5 @@
+<img style="width: 100px;" src="../../../assets/img/Logo01_Black.svg"><br>
+
 <h1>Olá, {{ $user->name }} ! </h1>
 
     <h2>Obrigado pelo seu cadastro</h2>
