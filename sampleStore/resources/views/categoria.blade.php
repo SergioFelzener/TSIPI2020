@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="player-description">
-                                    <p class="sample-name">{{$produto->name}}</p>
+                                    <p class="titleCategoria">{{$produto->name}}</p>
                                     <p class="sample-category">{{ $produto->description }}</p>
                                 </div>
 
