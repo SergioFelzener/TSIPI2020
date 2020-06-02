@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1 class="mt-2">Atualizar Categoria</h1>
+    <h1 class="">Atualizar Categoria</h1>
     <form action="{{route('admin.categorias.update', ['categoria' => $categoria->id])}}" method="post">
         @csrf
         @method("PUT")

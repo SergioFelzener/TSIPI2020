@@ -11045,6 +11045,7 @@ body nav.nav-app {
 
 body .logo {
   z-index: 100;
+  margin-right: 10px;
 }
 
 body .logo img {
@@ -11065,6 +11066,16 @@ body nav.nav-app ul li:not(:last-child) a.nav-link {
   text-decoration: none;
   color: white;
   text-align: center;
+}
+
+body nav.nav-app ul li:not(:last-child) a.nav-link-drop {
+  color: #272727;
+  text-align: left;
+}
+
+body nav.nav-app ul li:not(:last-child) a:hover {
+  background-color: #272727;
+  color: white;
 }
 
 body nav.nav-app ul li a {
@@ -11119,7 +11130,7 @@ body .menu-icon {
   transform: translateX(0) !important;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   nav.nav-app {
     padding: 20px 50px !important;
   }
@@ -11127,11 +11138,11 @@ body .menu-icon {
 
 @media screen and (max-width: 1090px) {
   nav.nav-app {
-    padding: 20px 30px !important;
+    padding: 20px 10px !important;
   }
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1230px) {
   nav.nav-app {
     padding: 20px 30px !important;
   }
@@ -12286,6 +12297,10 @@ footer .copy a {
   width: 280px;
 }
 
+.container-categoria {
+  min-height: 500px !important;
+}
+
 @font-face {
   font-family: SatellaRegular-ZVVaz;
   src: url(/fonts/SatellaRegular-ZVVaz.ttf?84c5a07cde8217248334b5c607f41a27);
@@ -12295,14 +12310,14 @@ footer .copy a {
   font-family: SatellaRegular-ZVVaz;
   font-size: 45px;
   letter-spacing: 4px;
-  text-shadow: 0px 3px 4px rgba(255, 0, 0, 0.73);
+  text-shadow: 0px 3px 4px rgba(18, 72, 248, 0.73);
 }
 
 .titleCategoria {
   font-family: SatellaRegular-ZVVaz;
   font-size: 20px;
   letter-spacing: 2px;
-  text-shadow: 0px 3px 4px rgba(255, 0, 0, 0.73);
+  text-shadow: 0px 3px 4px rgba(18, 72, 248, 0.73);
   margin-top: 18px;
 }
 

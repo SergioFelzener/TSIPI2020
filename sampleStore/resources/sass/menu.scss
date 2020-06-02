@@ -1,22 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none!important;
 }
 
-body{
+body {
     width: 100%;
     height: auto;
     background-color: #272727;
     font-family: 'Montserrat', sans-serif;
-
-    nav.nav-app{
+    nav.nav-app {
         width: 100%;
         height: 100px!important;
         display: flex;
@@ -25,61 +23,58 @@ body{
         padding: 20px 250px;
         z-index: 99;
     }
-
-     .logo {
-         z-index: 100;
-    
-        img{
+    .logo {
+        z-index: 100;
+        margin-right: 10px;
+        img {
             width: 200px;
         }
-
     }
-    
-    nav.nav-app ul{
+    nav.nav-app ul {
         transition: 150ms ease;
         list-style: none;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
-
-        li:not(:last-child){
-
-            a.nav-link{
+        li:not(:last-child) {
+            a.nav-link {
                 margin-right: 60px;
                 text-decoration: none;
                 color: white;
                 text-align: center;
             }
-            
+            a.nav-link-drop {
+                color: $secondary-color;
+                text-align: left;
+            }
+            a:hover {
+                background-color: #272727;
+                color: white;
+            }
         }
-
-        li a{
+        li a {
             transition: 100ms ease;
         }
-
-        li a:hover{
+        li a:hover {
             color: #dddddd;
         }
-
     }
-
-   #cart-icon{
-           width: 40px;
-           margin-left: 20px;
-   }
-
-   .menu-icon{
-       position: absolute;
-       top: 42px;
-       right: 50px;
-       display: none;
-       cursor: pointer;
-       z-index: 100;
-   }
+    #cart-icon {
+        width: 40px;
+        margin-left: 20px;
+    }
+    .menu-icon {
+        position: absolute;
+        top: 42px;
+        right: 50px;
+        display: none;
+        cursor: pointer;
+        z-index: 100;
+    }
 }
 
-.nav-wrapper{
+.nav-wrapper {
     width: 100%;
     height: 100px!important;
     background-color: $secondary-color;
@@ -87,12 +82,11 @@ body{
 }
 
 // Buttons
-
-.login-button{
+.login-button {
     font-weight: 600;
 }
 
-.register-button{
+.register-button {
     background-color: #E51E27;
     padding: 8px 20px;
     border-radius: 10px;
@@ -100,43 +94,34 @@ body{
     transition: 150ms ease-in-out;
     color: white;
     text-decoration: none;
-
-    &:hover{
+    &:hover {
         background-color: white;
         color: #E51E27;
     }
 }
 
 // Utils
-
-.open{
+.open {
     transform: translateX(0)!important;
 }
 
 // Media queries
-
-@media screen and (max-width: 1250px){
-    
-    nav.nav-app{
+@media screen and (max-width: 1450px) {
+    nav.nav-app {
         padding: 20px 50px!important;
     }
-
 }
 
-@media screen and (max-width: 1090px){
-    
-    nav.nav-app{
-        padding: 20px 30px!important;
+@media screen and (max-width: 1090px) {
+    nav.nav-app {
+        padding: 20px 10px!important;
     }
-
 }
 
-@media screen and (max-width: 1070px){
-    
-    nav.nav-app{
+@media screen and (max-width: 1230px) {
+    nav.nav-app {
         padding: 20px 30px!important;
-
-        ul{
+        ul {
             transform: translateX(100%);
             width: 100%;
             height: 100vh;
@@ -145,71 +130,54 @@ body{
             left: 0;
             flex-flow: column;
             background-color: #222222;
-
-            li{
+            li {
                 margin: 25px;
-                
-                a{
+                a {
                     margin-right: 0!important;
-    
                 }
-
             }
-
         }
     }
-    
-    .username-p{
+    .username-p {
         margin-right: 0px!important;
     }
-
-    .register-button{
+    .register-button {
         background-color: #E51E27;
         color: white;
-
-        &:hover{
+        &:hover {
             color: #E51E27;
             background-color: white;
         }
     }
-
-    #cart-icon{
+    #cart-icon {
         width: 40px;
         display: none;
     }
-
-    .menu-icon{
+    .menu-icon {
         display: block!important;
     }
-
 }
 
-@media screen and (max-width: 460px){
-
-    #logo{
+@media screen and (max-width: 460px) {
+    #logo {
         width: 160px!important;
     }
-
 }
 
-@media screen and (max-width: 350px){
-
-    nav.nav-app{
+@media screen and (max-width: 350px) {
+    nav.nav-app {
         padding: 20px!important;
     }
-
-    .menu-icon{
+    .menu-icon {
         right: 20px!important;
     }
-
 }
 
 // Nav Bootstrap
-
-.nav-sample{
+.nav-sample {
     background-color: $secondary-color;
 }
 
-.sample-logo{
+.sample-logo {
     max-width: 160px;
 }

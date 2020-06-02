@@ -39838,90 +39838,91 @@ __webpack_require__(/*! ./owl.start */ "./resources/js/owl.start.js");
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  var play_pause_button = document.querySelectorAll('.play-pause-button');
-  var favorite_button = document.querySelectorAll('.favorite-button');
-  var volume_button = document.querySelectorAll('.volume-button');
-  var sample_current_duration = document.querySelectorAll('.current-duration');
-  var seekbar = document.querySelectorAll('.seekbar');
-  var sample_total_duration = document.querySelectorAll('.total-duration');
-  var sample = document.querySelectorAll('.sample-audio');
-  sample.forEach(function (audio) {
-    audio.ontimeupdate = function () {
-      var id = audio.id;
-      seekbar[id].value = audio.currentTime;
-      sample_current_duration[id].innerHTML = "0:0" + sample[id].currentTime.toFixed(0);
-    };
-  });
-  seekbar.forEach(function (seekbar) {
-    seekbar.onchange = function (e) {
-      var id = seekbar.id;
-      sample[id].currentTime = e.target.value;
-      sample_current_duration[id].innerHTML = "0:0" + sample[id].currentTime.toFixed(0);
-    };
-  }); // Configuring Samples Players
-
-  for (var i = 0; i < sample.length; i++) {
-    // Setting unique IDs
-    sample[i].id = i;
-    seekbar[i].id = i;
-    sample_current_duration[i].id = i;
-    sample_total_duration[i].id = i;
-    volume_button[i].id = i;
-    play_pause_button[i].id = i; // Set sample duration
-
-    seekbar[i].max = sample[i].duration;
-    console.log(sample[i].duration);
-    sample_total_duration[i].innerHTML = "0:05"; //+ Math.floor(sample[i].duration)
-    // Set sample current time
-
-    sample_current_duration[i].innerHTML = "0:00"; // Set seekbar position
-
-    seekbar[i].value = 0;
-  } // Play / Pause btns
-
-
-  play_pause_button.forEach(function (btn) {
-    var id = btn.id;
-    btn.addEventListener('click', function () {
-      if (btn.getAttribute('data-pause') == 'paused') {
-        btn.firstElementChild.src = '../assets/img/audio/pause-icon.svg';
-        btn.dataset.pause = 'playing';
-        sample[id].play();
-      } else {
-        btn.firstElementChild.src = '../assets/img/audio/play-icon.svg';
-        btn.dataset.pause = 'paused';
-        sample[id].pause();
-      }
+  setTimeout(function () {
+    var play_pause_button = document.querySelectorAll('.play-pause-button');
+    var favorite_button = document.querySelectorAll('.favorite-button');
+    var volume_button = document.querySelectorAll('.volume-button');
+    var sample_current_duration = document.querySelectorAll('.current-duration');
+    var seekbar = document.querySelectorAll('.seekbar');
+    var sample_total_duration = document.querySelectorAll('.total-duration');
+    var sample = document.querySelectorAll('.sample-audio');
+    sample.forEach(function (audio) {
+      audio.ontimeupdate = function () {
+        var id = audio.id;
+        seekbar[id].value = audio.currentTime;
+        sample_current_duration[id].innerHTML = "0:0" + sample[id].currentTime.toFixed(0);
+      };
     });
-  }); // Favorite btns
+    seekbar.forEach(function (seekbar) {
+      seekbar.onchange = function (e) {
+        var id = seekbar.id;
+        sample[id].currentTime = e.target.value;
+        sample_current_duration[id].innerHTML = "0:0" + sample[id].currentTime.toFixed(0);
+      };
+    }); // Configuring Samples Players
 
-  favorite_button.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (btn.id != 'favorite') {
-        btn.id = 'favorite';
-        btn.firstElementChild.src = '../assets/img/audio/heart-icon-full.svg';
-      } else {
-        btn.id = '';
-        btn.firstElementChild.src = '../assets/img/audio/heart-icon.svg';
-      }
-    });
-  }); // Volume ON / OFF btns
+    for (var i = 0; i < sample.length; i++) {
+      // Setting unique IDs
+      sample[i].id = i;
+      seekbar[i].id = i;
+      sample_current_duration[i].id = i;
+      sample_total_duration[i].id = i;
+      volume_button[i].id = i;
+      play_pause_button[i].id = i; // Set sample duration
 
-  volume_button.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+      seekbar[i].max = sample[i].duration;
+      console.log(sample[i].duration);
+      sample_total_duration[i].innerHTML = "0:0" + Math.floor(sample[i].duration); // Set sample current time
+
+      sample_current_duration[i].innerHTML = "0:00"; // Set seekbar position
+
+      seekbar[i].value = 0;
+    } // Play / Pause btns
+
+
+    play_pause_button.forEach(function (btn) {
       var id = btn.id;
+      btn.addEventListener('click', function () {
+        if (btn.getAttribute('data-pause') == 'paused') {
+          btn.firstElementChild.src = '../assets/img/audio/pause-icon.svg';
+          btn.dataset.pause = 'playing';
+          sample[id].play();
+        } else {
+          btn.firstElementChild.src = '../assets/img/audio/play-icon.svg';
+          btn.dataset.pause = 'paused';
+          sample[id].pause();
+        }
+      });
+    }); // Favorite btns
 
-      if (btn.getAttribute('data-mute') != 'muted') {
-        sample[id].muted = true;
-        btn.dataset.mute = 'muted';
-        btn.firstElementChild.src = '../assets/img/audio/audio-icon-muted.svg';
-      } else {
-        sample[id].muted = false;
-        btn.dataset.mute = '';
-        btn.firstElementChild.src = '../assets/img/audio/audio-icon.svg';
-      }
+    favorite_button.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (btn.id != 'favorite') {
+          btn.id = 'favorite';
+          btn.firstElementChild.src = '../assets/img/audio/heart-icon-full.svg';
+        } else {
+          btn.id = '';
+          btn.firstElementChild.src = '../assets/img/audio/heart-icon.svg';
+        }
+      });
+    }); // Volume ON / OFF btns
+
+    volume_button.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var id = btn.id;
+
+        if (btn.getAttribute('data-mute') != 'muted') {
+          sample[id].muted = true;
+          btn.dataset.mute = 'muted';
+          btn.firstElementChild.src = '../assets/img/audio/audio-icon-muted.svg';
+        } else {
+          sample[id].muted = false;
+          btn.dataset.mute = '';
+          btn.firstElementChild.src = '../assets/img/audio/audio-icon.svg';
+        }
+      });
     });
-  });
+  }, 1000);
 };
 
 /***/ }),
