@@ -13,6 +13,7 @@
     @foreach($cart as $c)
     <div class="cart-item">
         <div class="cart-item-image">
+            <img style="width: 80px;" src="../assets/img/03B.svg" alt="Logo simpler">
 
         </div>
 

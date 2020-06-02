@@ -30,7 +30,7 @@ class categoriacontroller extends Controller
      */
     public function index()
     {
-	    $categorias = $this->categoria->paginate(10);
+	    $categorias = $this->categoria->paginate(8);
 
 	    return view('admin.categorias.index', compact('categorias'));
     }
