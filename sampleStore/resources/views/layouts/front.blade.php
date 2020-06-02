@@ -9,13 +9,14 @@
     <title>Marketplace Sample Store</title>
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script defer src="{{asset('js/app.js')}}"></script>
-
-
 
     <style>
         .front.row {
@@ -99,6 +100,19 @@
             <ul id="navigation-links">
                 <li><a class="nav-link" href="{{route('home')}}">Home</a></li>
                 <li><a class="nav-link" href="{{route('samples')}}">Samples</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorias
+                        </a>
+                        
+                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @foreach ($categorias as $categoria)
+                            <a class="nav-link nav-link-drop dropdown-item" href="{{route('categoria.single', ['slug' => $categoria->slug])}}">{{$categoria->name}}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
                 @guest
                 <li><a class="login-button nav-link" href="{{route('login')}}">Entrar</a></li>
                 <li><a class="register-button" href="{{route('register')}}">Registrar</a></li>
